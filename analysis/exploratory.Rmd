@@ -1,0 +1,24 @@
+---
+title: "Road Safety"
+author: "Ian Dennis Miller"
+date: "July 13, 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+
+d = read.csv("city-safety-comparison.csv")
+
+# d$per_cap = d$fatal_total/d$metro_population*100000
+d$per_cap = d$fatal_total/d$city_population*100000
+```
+
+## Line Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+ggplot(data=d, aes(x=year, y=per_cap, group=city)) + geom_line(aes(linetype=city, color=city))
+```
