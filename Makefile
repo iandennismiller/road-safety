@@ -2,7 +2,7 @@
 # Ian Dennis Miller
 
 release:
-	cp analysis/exploratory.md products
-	cp -r analysis/exploratory_files products
+	cp analysis/exploratory.md releases
+	cp -r analysis/exploratory_files releases
 
 .PHONY: release
