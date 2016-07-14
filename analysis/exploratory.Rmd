@@ -12,29 +12,27 @@ d = read.csv("city-safety-comparison.csv")
 years = c(2009, 2010, 2011, 2012, 2013, 2014, 2015)
 ```
 
-## Per Capita City
+## Introduction
 
-Fatality rates can be compared between cities by standardizing all fatalities according to city populations, yielding the per capita rate.
+## Pedestrian and Cyclist Fatalities Per Capita
 
-```{r per_capita_city, echo=FALSE}
-d$fatalities_per_capita = d$fatal_total / d$city_population * 100000
-ggplot(data=d, aes(x=year, y=fatalities_per_capita, group=city)) + 
-  geom_line(aes(linetype=city, color=city)) +
-  geom_smooth(method = "lm", se=FALSE, aes(linetype=city, group=city, color=city), show.legend = FALSE)
-```
-
-## Per Capita Metro
-
-It is a common pattern for people to commute to cities during the workday even though they do not live in the city.  On that basis, I have decided to use the Metro area population because I believe this will be a better indicator of the potential for road use.  Larger metro areas will generate more trips, so it will be a better proxy for actual traffic and, therefore, opportunities for pedestrian and cyclist fatalities.
+It is a common pattern for people to commute to cities during the workday even though they do not live in the city.  On that basis, the Metro area population is used to ideally serve as a better indicator of road use.  Larger metro areas will generate more trips, so it will be a better proxy for actual traffic and, therefore, opportunities for automobile, pedestrian, and cyclist interactions.
 
 ```{r per_capita_metro, echo=FALSE}
 d$fatalities_per_capita = d$fatal_total / d$metro_population * 100000
 ggplot(data=d, aes(x=year, y=fatalities_per_capita, group=city)) + 
   geom_line(aes(linetype=city, color=city)) +
-  geom_smooth(method = "lm", se=FALSE, aes(linetype=city, group=city, color=city), show.legend = FALSE)
+  geom_smooth(method = "lm", se=FALSE, aes(linetype=city, group=city, color=city), show.legend = FALSE) + 
+  scale_x_continuous(breaks = years)
 ```
 
 ## Direct Comparison: NYC and Toronto
+
+95% confidence intervals have been added around the trend lines, enabling direct comparisons between cities.
+
+In the case of New York City, we see that Toronto begins comparatively safer but quickly catches up.  Although Toronto was significantly safer in 2009, the difference between the two cities becomes non-significant by 2013, and by 2015 Toronto actually surpasses New York in absolute terms (although the difference is still not significant).
+
+The 7-year trend for New York is negative, whereas the 7-year trend for Toronto is positive.  If these trends are extended just 2 or 3 years into the future, then we would expect to find that Toronto has become significantly more dangerous than New York City.
 
 ```{r nyc_toronto, echo=FALSE}
 d$fatalities_per_capita = d$fatal_total / d$metro_population * 100000
@@ -46,6 +44,8 @@ ggplot(data=d2, aes(x=year, y=fatalities_per_capita, group=city)) +
 ```
 
 ## Direct Comparison: Amsterdam and Toronto
+
+Interestingly, in 2009 pedestrian and cyclist fatalities in Toronto were not significantly different from Amsterdam's rates.  However, by 2011 Toronto did have significantly more fatalities and the gap appears to be widening.  In contrast, Amsterdam appears to have a relatively constant rate of pedestrian and cyclist fatalities per capita.
 
 ```{r amsterdam_toronto, echo=FALSE}
 d$fatalities_per_capita = d$fatal_total / d$metro_population * 100000
