@@ -8,17 +8,50 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(ggplot2)
-
 d = read.csv("city-safety-comparison.csv")
-
-# d$per_cap = d$fatal_total/d$metro_population*100000
-d$per_cap = d$fatal_total/d$city_population*100000
+years = c(2009, 2010, 2011, 2012, 2013, 2014, 2015)
 ```
 
-## Line Plots
+## Per Capita City
 
-You can also embed plots, for example:
+Fatality rates can be compared between cities by standardizing all fatalities according to city populations, yielding the per capita rate.
 
-```{r pressure, echo=FALSE}
-ggplot(data=d, aes(x=year, y=per_cap, group=city)) + geom_line(aes(linetype=city, color=city))
+```{r per_capita_city, echo=FALSE}
+d$fatalities_per_capita = d$fatal_total / d$city_population * 100000
+ggplot(data=d, aes(x=year, y=fatalities_per_capita, group=city)) + 
+  geom_line(aes(linetype=city, color=city)) +
+  geom_smooth(method = "lm", se=FALSE, aes(linetype=city, group=city, color=city), show.legend = FALSE)
+```
+
+## Per Capita Metro
+
+It is a common pattern for people to commute to cities during the workday even though they do not live in the city.  On that basis, I have decided to use the Metro area population because I believe this will be a better indicator of the potential for road use.  Larger metro areas will generate more trips, so it will be a better proxy for actual traffic and, therefore, opportunities for pedestrian and cyclist fatalities.
+
+```{r per_capita_metro, echo=FALSE}
+d$fatalities_per_capita = d$fatal_total / d$metro_population * 100000
+ggplot(data=d, aes(x=year, y=fatalities_per_capita, group=city)) + 
+  geom_line(aes(linetype=city, color=city)) +
+  geom_smooth(method = "lm", se=FALSE, aes(linetype=city, group=city, color=city), show.legend = FALSE)
+```
+
+## Direct Comparison: NYC and Toronto
+
+```{r nyc_toronto, echo=FALSE}
+d$fatalities_per_capita = d$fatal_total / d$metro_population * 100000
+d2 = d[ which(d$city %in% c("Toronto", "New York City")), ]
+ggplot(data=d2, aes(x=year, y=fatalities_per_capita, group=city)) +
+  geom_line(aes(linetype=city, color=city)) +
+  geom_smooth(method = "lm", aes(linetype=city, group=city, color=city), show.legend = FALSE) + 
+  scale_x_continuous(breaks = years)
+```
+
+## Direct Comparison: Amsterdam and Toronto
+
+```{r amsterdam_toronto, echo=FALSE}
+d$fatalities_per_capita = d$fatal_total / d$metro_population * 100000
+d2 = d[ which(d$city %in% c("Amsterdam", "Toronto")), ]
+ggplot(data=d2, aes(x=year, y=fatalities_per_capita, group=city)) +
+  geom_line(aes(linetype=city, color=city)) +
+  geom_smooth(method = "lm", aes(linetype=city, group=city, color=city), show.legend = FALSE) + 
+  scale_x_continuous(breaks = years)
 ```
