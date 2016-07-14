@@ -1,8 +1,15 @@
 # road-safety
-# Ian Dennis Miller
+# Copyright (c) 2016 Ian Dennis Miller
 
-release:
-	cp analysis/exploratory.md releases
-	cp -r analysis/exploratory_files releases
+all: analysis
+	@echo "OK"
 
-.PHONY: release
+analysis:
+	cd analysis && Rscript -e "library(markdown); rmarkdown::render('toronto-road-safety.Rmd')" && rm -f *.tex
+
+release: analysis
+	cp analysis/toronto-road-safety.md releases
+	cp analysis/toronto-road-safety.html releases
+	cp -r analysis/toronto-road-safety_files releases
+
+.PHONY: all analysis release
