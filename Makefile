@@ -12,4 +12,7 @@ release: analysis
 	cp analysis/toronto-road-safety.html releases
 	cp -r analysis/toronto-road-safety_files releases
 
-.PHONY: all analysis release
+open:
+	open analysis/toronto-road-safety.html
+
+.PHONY: all analysis release open

@@ -3,6 +3,7 @@ title: "Road Safety"
 author: "Ian Dennis Miller"
 date: "July 13, 2016"
 output: github_document
+license: "Creative Commons (CC BY-SA 4.0) 2016 Ian Dennis Miller"
 ---
 
 ```{r setup, include=FALSE}
@@ -54,3 +55,7 @@ ggplot(data=d2, aes(x=year, y=fatalities_per_capita, group=city)) +
   geom_smooth(method = "lm", aes(linetype=city, group=city, color=city), show.legend = FALSE) +
   scale_x_continuous(breaks = years)
 ```
+
+## License
+
+[Creative Commons (CC BY-SA 4.0) 2016 Ian Dennis Miller](https://creativecommons.org/licenses/by-sa/4.0/)
