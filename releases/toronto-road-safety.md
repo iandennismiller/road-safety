@@ -30,3 +30,8 @@ Direct Comparison: Amsterdam and Toronto
 Interestingly, in 2009 pedestrian and cyclist fatalities in Toronto were not significantly different from Amsterdam's rates. However, by 2011 Toronto did have significantly more fatalities and the gap appears to be widening. In contrast, Amsterdam appears to have a relatively constant rate of pedestrian and cyclist fatalities per capita.
 
 ![](toronto-road-safety_files/figure-markdown_github/amsterdam_toronto-1.png)<!-- -->
+
+License
+-------
+
+[Creative Commons (CC BY-SA 4.0) 2016 Ian Dennis Miller](https://creativecommons.org/licenses/by-sa/4.0/)
