@@ -2,7 +2,7 @@
 title: "Road Safety"
 author: "Ian Dennis Miller"
 date: "July 13, 2016"
-output: html_document
+output: github_document
 ---
 
 ```{r setup, include=FALSE}
