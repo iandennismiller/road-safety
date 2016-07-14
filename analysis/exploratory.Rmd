@@ -8,7 +8,7 @@ output: github_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(ggplot2)
-d = read.csv("city-safety-comparison.csv")
+d = read.csv("../data/city-safety-comparison.csv")
 years = c(2009, 2010, 2011, 2012, 2013, 2014, 2015)
 ```
 
