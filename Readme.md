@@ -10,7 +10,7 @@ Toronto pedestrian and cyclist fatality data were collected for the 7-year perio
 
 This analysis suggests that in 2009 Toronto was one of the safer cities in the study.  However, by 2015 Toronto had risen to the highest number of pedestrian and cyclist fatalities per capita among the 7 cities studied, and is trending to become significantly more dangerous than all other cities studied.
 
-[Read the full report here.](https://github.com/iandennismiller/road-safety/blob/master/releases/toronto-road-safety.md)
+[Read the full report here.](https://github.com/iandennismiller/road-safety/blob/master/releases/toronto-road-safety.md)  ([PDF](https://github.com/iandennismiller/road-safety/blob/master/releases/toronto-road-safety.pdf))
 
 ## Featured Comparison: New York City and Toronto
 
