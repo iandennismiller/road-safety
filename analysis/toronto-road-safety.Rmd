@@ -9,6 +9,7 @@ license: "Creative Commons (CC BY-SA 4.0) 2016 Ian Dennis Miller"
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 source("analysis.R")
+source("plots.R")
 ```
 
 ## Introduction
@@ -18,30 +19,13 @@ source("analysis.R")
 It is a common pattern for people to commute to cities during the workday even though they do not live in the city.  On that basis, the Metro area population, rather than city population, is used as an indicator of road use.  Larger metro areas will generate more trips, so it will be a better proxy for actual traffic and, therefore, opportunities for automobile, pedestrian, and cyclist interactions.
 
 ```{r per_capita_metro}
-ggplot(data=d, aes(x=year, y=fatalities_per_capita, group=city)) +
-  ylim(0, 0.8) +
-  geom_line(aes(color=city), size=0.25, show.legend = FALSE) +
-  geom_smooth(
-    method = "lm",
-    se = FALSE,
-    aes(linetype=city, group=city, color=city)
-  ) +
-  scale_x_continuous(breaks = years)
+per_capita_metro_plot
 ```
 
 ## Trends
 
 ```{r trends}
-ggplot(data=merged) +
-  geom_line(aes(color=city, x=year_offset, y=fatalities_per_capita, group=city)) +
-  geom_abline(aes(linetype=city,color=city, slope=slope, intercept=intercept)) +
-  ylim(0, 0.8) +
-  scale_x_continuous(
-    breaks=c(0:15),
-    labels=as.character(predicted_years),
-    limits=c(0, 15)
-  ) + 
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+trends_plot
 ```
 
 ## Direct Comparison: NYC and Toronto
@@ -53,11 +37,7 @@ In the case of New York City, we see that Toronto begins comparatively safer but
 The 7-year trend for New York is negative, whereas the 7-year trend for Toronto is positive.  If these trends are extended just 2 or 3 years into the future, then we would expect to find that Toronto has become significantly more dangerous than New York City.
 
 ```{r nyc_toronto}
-d2 = d[ which(d$city %in% c("Toronto", "New York City")), ]
-ggplot(data=d2, aes(x=year, y=fatalities_per_capita, group=city)) +
-  geom_line(aes(color=city), show.legend = FALSE) +
-  geom_smooth(method = "lm", aes(linetype=city, group=city, color=city)) +
-  scale_x_continuous(breaks = years)
+nyc_toronto_plot
 ```
 
 ## Direct Comparison: Amsterdam and Toronto
@@ -65,19 +45,13 @@ ggplot(data=d2, aes(x=year, y=fatalities_per_capita, group=city)) +
 Interestingly, in 2009 pedestrian and cyclist fatalities in Toronto were not significantly different from Amsterdam's rates.  However, by 2011 Toronto did have significantly more fatalities and the gap appears to be widening.  In contrast, Amsterdam appears to have a relatively constant rate of pedestrian and cyclist fatalities per capita.
 
 ```{r amsterdam_toronto}
-d2 = d[ which(d$city %in% c("Amsterdam", "Toronto")), ]
-ggplot(data=d2, aes(x=year, y=fatalities_per_capita, group=city)) +
-  geom_line(aes(color=city), show.legend = FALSE) +
-  geom_smooth(method = "lm", aes(linetype=city, group=city, color=city)) +
-  scale_x_continuous(breaks = years)
+amsterdam_toronto_plot
 ```
 
 ## Trend lines
 
-```{r kable}
-slopes_table = slopes
-slopes_table$city = NULL
-kable(slopes_table)
+```{r trend_table}
+trend_kable
 ```
 
 ## License
