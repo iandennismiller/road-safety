@@ -5,7 +5,7 @@ all: analysis
 	@echo "OK"
 
 analysis:
-	cd analysis && Rscript -e "library(markdown); rmarkdown::render('toronto-road-safety.Rmd')" && rm -f *.tex
+	cd analysis && Rscript -e "library(markdown); rmarkdown::render('toronto-road-safety.Rmd')"
 
 release: analysis
 	cp analysis/toronto-road-safety.md releases

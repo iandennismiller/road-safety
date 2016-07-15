@@ -19,6 +19,7 @@ It is a common pattern for people to commute to cities during the workday even t
 
 ```{r per_capita_metro, echo=FALSE}
 ggplot(data=d, aes(x=year, y=fatalities_per_capita, group=city)) +
+  ylim(0, 0.8) +
   geom_line(aes(linetype=city, color=city)) +
   geom_smooth(
     method = "lm",
@@ -26,6 +27,27 @@ ggplot(data=d, aes(x=year, y=fatalities_per_capita, group=city)) +
     aes(linetype=city, group=city, color=city),
     show.legend = FALSE) +
   scale_x_continuous(breaks = years)
+```
+
+## Slopes
+
+```{r kable, echo=FALSE}
+slopes_table = slopes
+slopes_table$city = NULL
+kable(slopes_table)
+```
+
+```{r echo=FALSE}
+ggplot(data=merged) +
+  geom_line(aes(color=city, x=year_offset, y=fatalities_per_capita, group=city)) +
+  geom_abline(aes(linetype=city,color=city, slope=slope, intercept=intercept)) +
+  ylim(0, 0.8) +
+  scale_x_continuous(
+    breaks=c(0:15),
+    labels=as.character(predicted_years),
+    limits=c(0, 15)
+  ) + 
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
 ## Direct Comparison: NYC and Toronto
