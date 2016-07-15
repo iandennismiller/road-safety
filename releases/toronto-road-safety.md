@@ -3,7 +3,7 @@ Road Safety in Toronto
 Ian Dennis Miller
 July 14, 2016
 
-**DRAFT**
+**Working Paper**
 
 **This is not the final report.**
 
@@ -83,10 +83,10 @@ Appendix
 | Amsterdam     |  0.2971794|   0.0040929|
 | Chicago       |  0.4385113|   0.0043063|
 | Copenhagen    |  0.2571088|   0.0033455|
-| London        |  0.6031259|  -0.0053331|
-| Los Angeles   |  0.4772473|   0.0051122|
-| New York City |  0.6856390|  -0.0039906|
-| Toronto       |  0.4646309|   0.0174627|
+| London        |  0.6031261|  -0.0053332|
+| Los Angeles   |  0.4772472|   0.0051122|
+| New York City |  0.6856391|  -0.0039906|
+| Toronto       |  0.4646306|   0.0174628|
 
 License
 -------
