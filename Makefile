@@ -12,9 +12,8 @@ pdf:
 	rm -rf analysis/figure
 	rm -f analysis/*.log
 
-release: analysis pdf
+release: pdf analysis
 	cp analysis/toronto-road-safety.md releases
-	cp analysis/toronto-road-safety.html releases
 	cp analysis/toronto-road-safety.pdf releases
 	cp -r analysis/toronto-road-safety_files releases
 
