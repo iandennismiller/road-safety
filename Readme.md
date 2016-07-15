@@ -2,8 +2,6 @@
 
 Ian Dennis Miller
 
-About the author: As a [Graduate Student](http://imiller.utsc.utoronto.ca) at the University of Toronto, Ian studies complex social phenomena - both online (memes, citations) and offline (politics, urban legends, traffic).
-
 ## Summary
 
 Toronto pedestrian and cyclist fatality data were collected for the 7-year period of 2009-2015. Similar data were collected for comparable cities: New York City, Chicago, Los Angeles, London, Amsterdam, and Copenhagen. Yearly *per capita* fatality rates were calculated based on Metro Area populations.
@@ -30,6 +28,10 @@ If the trend lines are extended into the near future, we would expect to find th
 The report can be built from the command line by issuing the following command:
 
     make analysis open
+
+## About the author
+
+As a [Graduate Student](http://imiller.utsc.utoronto.ca) at the University of Toronto, Ian studies complex social phenomena - both online (memes, academic citations) and offline (politics, urban legends, traffic).
 
 ## License
 
