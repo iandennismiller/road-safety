@@ -15,4 +15,9 @@ release: analysis
 open:
 	open analysis/toronto-road-safety.html
 
-.PHONY: all analysis release open
+clean:
+	rm -f analysis/toronto-road-safety.md
+	rm -f analysis/toronto-road-safety.html
+	rm -rf analysis/toronto-road-safety_files
+
+.PHONY: all analysis release open clean

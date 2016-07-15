@@ -13,6 +13,11 @@ It is a common pattern for people to commute to cities during the workday even t
 
 ![](toronto-road-safety_files/figure-markdown_github/per_capita_metro-1.png)<!-- -->
 
+Trends
+------
+
+![](toronto-road-safety_files/figure-markdown_github/trends-1.png)<!-- -->
+
 Direct Comparison: NYC and Toronto
 ----------------------------------
 
@@ -30,6 +35,19 @@ Direct Comparison: Amsterdam and Toronto
 Interestingly, in 2009 pedestrian and cyclist fatalities in Toronto were not significantly different from Amsterdam's rates. However, by 2011 Toronto did have significantly more fatalities and the gap appears to be widening. In contrast, Amsterdam appears to have a relatively constant rate of pedestrian and cyclist fatalities per capita.
 
 ![](toronto-road-safety_files/figure-markdown_github/amsterdam_toronto-1.png)<!-- -->
+
+Trend lines
+-----------
+
+|               |  intercept|       slope|
+|---------------|----------:|-----------:|
+| Amsterdam     |  0.2971794|   0.0040929|
+| Chicago       |  0.4385113|   0.0043063|
+| Copenhagen    |  0.2571088|   0.0033455|
+| London        |  0.6031259|  -0.0053331|
+| Los Angeles   |  0.4772473|   0.0051122|
+| New York City |  0.6856390|  -0.0039906|
+| Toronto       |  0.4646309|   0.0174627|
 
 License
 -------
