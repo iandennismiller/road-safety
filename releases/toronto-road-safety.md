@@ -77,8 +77,7 @@ Conclusion
 
 -   There are risks inherint in following trends
 -   Likewise, there are risks in ignoring them
--   Toronto is on track to become the most dangerous city, on a per-capita basis, for pedestrians and cyclists in North America
--   Among large cities in North America, Toronto is the most dangerous for cyclists and pedestrians.
+-   Toronto is on track to become more dangerous
 
 References
 ----------
@@ -96,7 +95,7 @@ Appendix
 | London        |  0.6031259|  -0.0053331|
 | Los Angeles   |  0.4772473|   0.0051122|
 | New York City |  0.6856390|  -0.0039906|
-| Toronto       |  0.4646308|   0.0174627|
+| Toronto       |  0.4646309|   0.0174627|
 
 License
 -------

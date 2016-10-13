@@ -36,7 +36,7 @@ per_capita_metro_plot =
 
 trends_plot = 
   ggplot(data=merged, aes(x=year_offset, y=fatalities_per_capita, group=city)) +
-  geom_line(aes(color=city), size=0.1, show.legend = FALSE) +
+  geom_line(aes(color=city), size=0.1) +
   geom_point(aes(color=city), size=0.1, show.legend = FALSE) +
   geom_abline(aes(linetype=city,color=city, slope=slope, intercept=intercept)) +
   ylim(0, 0.8) +
@@ -73,7 +73,7 @@ nyc_toronto_plot =
   guides(col=guide_legend(nrow=1, label.position = "bottom")) +
   theme(legend.key.width=unit(1, "cm")) +
   labs(
-    title="Pedestrian and Cyclist deaths per capita: Focus on Toronto and New York City",
+    title="Pedestrian and Cyclist deaths per capita: Toronto and New York City",
     x="Year",
     y="# fatalities per 100,000 residents"
   )
@@ -94,7 +94,7 @@ amsterdam_toronto_plot =
   guides(col=guide_legend(nrow=1, label.position = "bottom")) +
   theme(legend.key.width=unit(1, "cm")) +
   labs(
-    title="Pedestrian and Cyclist deaths per capita: Focus on Toronto and Amsterdam",
+    title="Pedestrian and Cyclist deaths per capita: Toronto and Amsterdam",
     x="Year",
     y="# fatalities per 100,000 residents"
   )
