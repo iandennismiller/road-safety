@@ -26,7 +26,10 @@ source("plots.R")
 
 ## Background
 
-
+- historical trends can be helpful for predicting the future
+- comparisons between cities can also be helpful
+- there are many factors that contribute to road safety
+- the per-capita adjustment for mortality statistics can help for between-cities comparison
 
 ## Methods
 
@@ -83,6 +86,11 @@ amsterdam_toronto_plot
 This analysis suggests that in 2009 Toronto was one of the safer cities in the study.  However, by 2015 Toronto had risen to the highest number of pedestrian and cyclist fatalities per capita among the 7 cities studied, and is trending to become significantly more dangerous than all other cities studied.
 
 ## Conclusion
+
+- There are risks inherint in following trends
+- Likewise, there are risks in ignoring them
+- Toronto is on track to become the most dangerous city, on a per-capita basis, for pedestrians and cyclists in North America
+- Among large cities in North America, Toronto is the most dangerous for cyclists and pedestrians.
 
 ## References
 

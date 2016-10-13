@@ -1,17 +1,36 @@
 # road-safety
 # Copyright (c) 2016 Ian Dennis Miller
 
+library(ggplot2)
+library(nlme)
+# library(knitr)
+library(RColorBrewer)
+
+source("fte_theme.R")
+
 # per_capita_metro_plot
 
-per_capita_metro_plot = ggplot(data=d, aes(x=year, y=fatalities_per_capita, group=city)) +
+per_capita_metro_plot = 
+  ggplot(data=d, aes(x=year, y=fatalities_per_capita, group=city)) +
   ylim(0, 0.8) +
-  geom_line(aes(color=city), size=0.25, show.legend = FALSE) +
+  geom_line(aes(color=city, linetype=city), size=0.1, show.legend = FALSE) +
+  geom_point(aes(color=city), size=0.1, show.legend = FALSE) +
   geom_smooth(
     method = "lm",
     se = FALSE,
     aes(linetype=city, group=city, color=city)
   ) +
-  scale_x_continuous(breaks = years)
+  scale_x_continuous(breaks = years) +
+  fte_theme() +
+  geom_hline(yintercept=0, size=0.2, color="black") +
+  theme(legend.position="top") +
+  guides(col=guide_legend(nrow=1, label.position = "bottom")) +
+  theme(legend.key.width=unit(1, "cm")) +
+  labs(
+    title="Pedestrian and Cyclist deaths per capita",
+    x="Year",
+    y="# fatalities per 100,000 residents"
+  )
 
 # trends_plot
 
