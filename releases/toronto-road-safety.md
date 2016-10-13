@@ -19,6 +19,11 @@ Introduction
 Background
 ----------
 
+-   historical trends can be helpful for predicting the future
+-   comparisons between cities can also be helpful
+-   there are many factors that contribute to road safety
+-   the per-capita adjustment for mortality statistics can help for between-cities comparison
+
 Methods
 -------
 
@@ -40,11 +45,11 @@ Results
 
 It is a common pattern for people to commute to cities during the workday even though they do not live in the city. On that basis, the Metro area population, rather than city population, is used as an indicator of road use. Larger metro areas will generate more trips, so it will be a better proxy for actual traffic and, therefore, opportunities for automobile, pedestrian, and cyclist interactions.
 
-![](toronto-road-safety_files/figure-markdown_github/per_capita_metro-1.png)<!-- -->
+![](toronto-road-safety_files/figure-markdown_github/per_capita_metro-1.png)
 
 ### Trends
 
-![](toronto-road-safety_files/figure-markdown_github/trends-1.png)<!-- -->
+![](toronto-road-safety_files/figure-markdown_github/trends-1.png)
 
 ### Direct Comparison: NYC and Toronto
 
@@ -54,13 +59,13 @@ In the case of New York City, we see that Toronto begins comparatively safer but
 
 The 7-year trend for New York is negative, whereas the 7-year trend for Toronto is positive. If these trends are extended just 2 or 3 years into the future, then we would expect to find that Toronto has become significantly more dangerous than New York City.
 
-![](toronto-road-safety_files/figure-markdown_github/nyc_toronto-1.png)<!-- -->
+![](toronto-road-safety_files/figure-markdown_github/nyc_toronto-1.png)
 
 ### Direct Comparison: Amsterdam and Toronto
 
 Interestingly, in 2009 pedestrian and cyclist fatalities in Toronto were not significantly different from Amsterdam's rates. However, by 2011 Toronto did have significantly more fatalities and the gap appears to be widening. In contrast, Amsterdam appears to have a relatively constant rate of pedestrian and cyclist fatalities per capita.
 
-![](toronto-road-safety_files/figure-markdown_github/amsterdam_toronto-1.png)<!-- -->
+![](toronto-road-safety_files/figure-markdown_github/amsterdam_toronto-1.png)
 
 Discussion
 ----------
@@ -69,6 +74,11 @@ This analysis suggests that in 2009 Toronto was one of the safer cities in the s
 
 Conclusion
 ----------
+
+-   There are risks inherint in following trends
+-   Likewise, there are risks in ignoring them
+-   Toronto is on track to become the most dangerous city, on a per-capita basis, for pedestrians and cyclists in North America
+-   Among large cities in North America, Toronto is the most dangerous for cyclists and pedestrians.
 
 References
 ----------
@@ -83,10 +93,10 @@ Appendix
 | Amsterdam     |  0.2971794|   0.0040929|
 | Chicago       |  0.4385113|   0.0043063|
 | Copenhagen    |  0.2571088|   0.0033455|
-| London        |  0.6031261|  -0.0053332|
-| Los Angeles   |  0.4772472|   0.0051122|
-| New York City |  0.6856391|  -0.0039906|
-| Toronto       |  0.4646306|   0.0174628|
+| London        |  0.6031259|  -0.0053331|
+| Los Angeles   |  0.4772473|   0.0051122|
+| New York City |  0.6856390|  -0.0039906|
+| Toronto       |  0.4646308|   0.0174627|
 
 License
 -------
