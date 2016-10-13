@@ -27,9 +27,9 @@ per_capita_metro_plot =
   guides(col=guide_legend(nrow=1, label.position = "bottom")) +
   theme(legend.key.width=unit(1, "cm")) +
   labs(
-    title="Pedestrian and Cyclist deaths per capita",
+    title="Pedestrian and Cyclist deaths per 100,000 residents",
     x="Year",
-    y="# fatalities per 100,000 residents"
+    y="# deaths per 100,000 residents"
   )
 
 # trends_plot
@@ -52,9 +52,9 @@ trends_plot =
     guides(col=guide_legend(nrow=1, label.position = "bottom")) +
     theme(legend.key.width=unit(1, "cm")) +
     labs(
-      title="Pedestrian and Cyclist deaths per capita, with future trend line",
+      title="Pedestrian and Cyclist deaths per 100,000 residents, with future trend line",
       x="Year",
-      y="# fatalities per 100,000 residents"
+      y="# deaths per 100,000 residents"
     )
 
 # nyc_toronto_plot
@@ -73,9 +73,9 @@ nyc_toronto_plot =
   guides(col=guide_legend(nrow=1, label.position = "bottom")) +
   theme(legend.key.width=unit(1, "cm")) +
   labs(
-    title="Pedestrian and Cyclist deaths per capita: Toronto and New York City",
+    title="Pedestrian and Cyclist deaths per 100,000 residents: Toronto and New York City",
     x="Year",
-    y="# fatalities per 100,000 residents"
+    y="# deaths per 100,000 residents"
   )
 
 # amsterdam_toronto_plot
@@ -94,9 +94,9 @@ amsterdam_toronto_plot =
   guides(col=guide_legend(nrow=1, label.position = "bottom")) +
   theme(legend.key.width=unit(1, "cm")) +
   labs(
-    title="Pedestrian and Cyclist deaths per capita: Toronto and Amsterdam",
+    title="Pedestrian and Cyclist deaths per 100,000 residents: Toronto and Amsterdam",
     x="Year",
-    y="# fatalities per 100,000 residents"
+    y="# deaths per 100,000 residents"
   )
 
 # trend_table
