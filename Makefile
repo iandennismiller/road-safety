@@ -22,6 +22,8 @@ release: pdf analysis
 website:
 	# cd analysis && Rscript -e "library(bookdown); bookdown::html_document2('toronto-road-safety.Rmd')"
 	cd analysis && Rscript -e "library(bookdown); bookdown::render_book('toronto-road-safety.Rmd', 'bookdown::gitbook')"
+	cp -r analysis/_book/*.html docs
+	cp -r analysis/_book/*_files docs
 
 open:
 	open analysis/toronto-road-safety.html
