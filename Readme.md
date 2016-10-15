@@ -13,7 +13,7 @@ This analysis suggests that in 2009 Toronto was one of the safer cities in the s
 
 ## Featured Comparison: New York City and Toronto
 
-In comparison to New York City, which in 2009 has the highest fatality rate in the study, Toronto has caught up by 2013, and by 2015 actually surpasses New York City in absolute terms - although this difference is not statistically significant.
+In 2009, New York City had the greatest pedestrian and cyclist fatality rate among all cities included in the study.  Toronto caught up to New York City in 2013, and by 2015 actually surpasses New York City in absolute terms - although this difference is not statistically significant.
 
 If the trend lines are extended into the near future, we would expect to find that Toronto will become significantly more dangerous than New York City for pedestrians and cyclists.  As New York City was previously the most dangerous, Toronto is therefore trending to become most dangerous among the 7 cities studied.
 
