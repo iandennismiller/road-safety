@@ -18,5 +18,7 @@ clean:
 	rm -f analysis/toronto-road-safety.pdf
 	rm -f analysis/toronto-road-safety.html
 	rm -rf analysis/toronto-road-safety_files
+	rm -rf analysis/_bookdown_files
+	rm -rf analysis/_book
 
 .PHONY: all analysis release open clean

@@ -15,7 +15,7 @@ As a [Graduate Student](http://imiller.utsc.utoronto.ca) at the University of To
 
 ## License
 
-See [LICENSE.md](LICENSE.md) for details.  This project contains two licensable components:
+See [License.md](License.md) for details.  This project contains two licensable components:
 
 - Software, which is distributed with the MIT License
-- Reports in the `/releases` folder, which are distributed with a Creative Commons License.
+- Reports in the `/docs` folder, which are distributed with a Creative Commons License.
