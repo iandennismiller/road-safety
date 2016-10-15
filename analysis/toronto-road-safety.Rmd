@@ -3,7 +3,9 @@ title: "Road Safety in Toronto"
 author: "Ian Dennis Miller"
 date: "July 14, 2016"
 # output: github_document
-site: bookdown::bookdown_site
+knit: "bookdown::render_book"
+site: "bookdown::bookdown_site"
+book_filename: toronto-road-safety
 output:
  bookdown::gitbook: default
 license: "Creative Commons (CC BY-SA 4.0) 2016 Ian Dennis Miller"
@@ -16,7 +18,7 @@ output_dir: "docs"
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
-library(bookdown)
+# library(bookdown)
 source("analysis.R")
 source("plots.R")
 ```
@@ -83,9 +85,9 @@ The R Statistical Environment was used for analysis and plotting.  All scripts u
 
 # Results
 
-The rate of pedestrian and cyclist fatalities per 100,000 residents are plotted in Figure \@ref(fig:per_capita_metro).
+The rate of pedestrian and cyclist fatalities per 100,000 residents are plotted in Figure \@ref(fig:per-capita-metro).
 
-```{r per_capita_metro, fig.cap="The trend line for each city is fit to the raw values with a mean-squared error method"}
+```{r per-capita-metro, fig.align="center", fig.cap="The trend line for each city is fit to the raw values with a mean-squared error method"}
 per_capita_metro_plot
 ```
 
