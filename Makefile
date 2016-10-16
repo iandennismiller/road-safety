@@ -1,12 +1,12 @@
 # road-safety
 # Copyright (c) 2016 Ian Dennis Miller
 
-all: analysis
-	@echo "OK"
-
 analysis:
 	cd analysis && Rscript -e "library(bookdown); bookdown::render_book('toronto-road-safety.Rmd', 'bookdown::gitbook')"
 	convert -resize '600' docs/pedestrian-cyclist-safety_files/figure-html/trends-1.png docs/trends-thumb.png
+
+all: analysis pdf
+	@echo "OK"
 
 pdf:
 	cd analysis && Rscript -e "library(bookdown); bookdown::render_book('toronto-road-safety.Rmd', 'bookdown::pdf_book')"

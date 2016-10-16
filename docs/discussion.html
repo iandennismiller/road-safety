@@ -28,6 +28,11 @@
   
 <meta name="date" content="2016-10-15">
 
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -72,9 +77,12 @@
 <li class="chapter" data-level="2.4" data-path="methods.html"><a href="methods.html#reproducibility"><i class="fa fa-check"></i><b>2.4</b> Reproducibility</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>3</b> Results</a><ul>
-<li class="chapter" data-level="3.1" data-path="results.html"><a href="results.html#trends"><i class="fa fa-check"></i><b>3.1</b> Trends</a></li>
-<li class="chapter" data-level="3.2" data-path="results.html"><a href="results.html#direct-comparison-nyc-and-toronto"><i class="fa fa-check"></i><b>3.2</b> Direct Comparison: NYC and Toronto</a></li>
-<li class="chapter" data-level="3.3" data-path="results.html"><a href="results.html#direct-comparison-amsterdam-and-toronto"><i class="fa fa-check"></i><b>3.3</b> Direct Comparison: Amsterdam and Toronto</a></li>
+<li class="chapter" data-level="3.1" data-path="results.html"><a href="results.html#historical-trends"><i class="fa fa-check"></i><b>3.1</b> Historical trends</a></li>
+<li class="chapter" data-level="3.2" data-path="results.html"><a href="results.html#near-future-trends"><i class="fa fa-check"></i><b>3.2</b> Near Future trends</a></li>
+<li class="chapter" data-level="3.3" data-path="results.html"><a href="results.html#featured-comparisons"><i class="fa fa-check"></i><b>3.3</b> Featured Comparisons</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="results.html"><a href="results.html#nyc-and-toronto"><i class="fa fa-check"></i><b>3.3.1</b> NYC and Toronto</a></li>
+<li class="chapter" data-level="3.3.2" data-path="results.html"><a href="results.html#amsterdam-and-toronto"><i class="fa fa-check"></i><b>3.3.2</b> Amsterdam and Toronto</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="discussion.html"><a href="discussion.html"><i class="fa fa-check"></i><b>4</b> Discussion</a></li>
 <li class="chapter" data-level="5" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>5</b> Conclusion</a></li>
@@ -103,6 +111,7 @@
 <h1><span class="header-section-number">4</span> Discussion</h1>
 <p>This analysis suggests that in 2009 Toronto was one of the safer cities in the study. However, by 2015 Toronto had risen to the highest number of pedestrian and cyclist fatalities per capita among the 7 cities studied, and is trending to become significantly more dangerous than all other cities studied.</p>
 <p>Although this report was originally motivated by conditions in the city of Toronto, the results can be used to tell a story about each city.</p>
+<p>It is worth considering what London is doing, because it is trending to become safer than every North American city in the study. Although this study cannot answer this question, it is worth considering whether any policies enacted by London might be responsible for the drop in fatality rates. For example, London has adopted …</p>
 </div>
             </section>
 
@@ -148,6 +157,17 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

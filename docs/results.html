@@ -28,6 +28,11 @@
   
 <meta name="date" content="2016-10-15">
 
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -72,9 +77,12 @@
 <li class="chapter" data-level="2.4" data-path="methods.html"><a href="methods.html#reproducibility"><i class="fa fa-check"></i><b>2.4</b> Reproducibility</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>3</b> Results</a><ul>
-<li class="chapter" data-level="3.1" data-path="results.html"><a href="results.html#trends"><i class="fa fa-check"></i><b>3.1</b> Trends</a></li>
-<li class="chapter" data-level="3.2" data-path="results.html"><a href="results.html#direct-comparison-nyc-and-toronto"><i class="fa fa-check"></i><b>3.2</b> Direct Comparison: NYC and Toronto</a></li>
-<li class="chapter" data-level="3.3" data-path="results.html"><a href="results.html#direct-comparison-amsterdam-and-toronto"><i class="fa fa-check"></i><b>3.3</b> Direct Comparison: Amsterdam and Toronto</a></li>
+<li class="chapter" data-level="3.1" data-path="results.html"><a href="results.html#historical-trends"><i class="fa fa-check"></i><b>3.1</b> Historical trends</a></li>
+<li class="chapter" data-level="3.2" data-path="results.html"><a href="results.html#near-future-trends"><i class="fa fa-check"></i><b>3.2</b> Near Future trends</a></li>
+<li class="chapter" data-level="3.3" data-path="results.html"><a href="results.html#featured-comparisons"><i class="fa fa-check"></i><b>3.3</b> Featured Comparisons</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="results.html"><a href="results.html#nyc-and-toronto"><i class="fa fa-check"></i><b>3.3.1</b> NYC and Toronto</a></li>
+<li class="chapter" data-level="3.3.2" data-path="results.html"><a href="results.html#amsterdam-and-toronto"><i class="fa fa-check"></i><b>3.3.2</b> Amsterdam and Toronto</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="discussion.html"><a href="discussion.html"><i class="fa fa-check"></i><b>4</b> Discussion</a></li>
 <li class="chapter" data-level="5" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>5</b> Conclusion</a></li>
@@ -101,16 +109,25 @@
             <section class="normal" id="section-">
 <div id="results" class="section level1">
 <h1><span class="header-section-number">3</span> Results</h1>
-<p>The rate of pedestrian and cyclist fatalities per 100,000 residents are plotted in Figure <a href="results.html#fig:per-capita-metro">3.1</a>.</p>
+<p>The general analytic approach for this work is to visualize the historical record then fit trend lines to each city. This approach permits the basic exploration of past years as well as rudimentary predictions for the near future. Because there are many measurements for each city, it is possible to isolate variance both within- and between-cities. When this variance is visualized as 95% confidence interval bands, cities may be directly compared to determine the statistical significance of any differences.</p>
+<div id="historical-trends" class="section level2">
+<h2><span class="header-section-number">3.1</span> Historical trends</h2>
+<p>The rate of pedestrian and cyclist fatalities per 100,000 residents are plotted in Figure <a href="results.html#fig:per-capita-metro">3.1</a>. The trend line for each city is fit to the raw values with a simple least squared error method <a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>. Due in part to the basic estimation process, the trends for New York City and Toronto appear to intersect in 2015. This result indicates Toronto is more dangerous to pedestrians and cyclists than each other city on a per capita basis, both in terms of the actual fatality rate in 2015 and in terms of the fatality rate trend.</p>
 <div class="figure" style="text-align: center"><span id="fig:per-capita-metro"></span>
-<img src="pedestrian-cyclist-safety_files/figure-html/per-capita-metro-1.png" alt="The trend line for each city is fit to the raw values with a simple least squared error method" width="672" />
+<img src="pedestrian-cyclist-safety_files/figure-html/per-capita-metro-1.png" alt="Historical pedestrian and cyclist fatality data from 2009-2015 were plotted for seven major cities.  Actual scores are plotted as points, which are then connected by thin lines for each city.  Thick trend lines are plotted to indicate the general direction of the raw data." width="672" />
 <p class="caption">
-Figure 3.1: The trend line for each city is fit to the raw values with a simple least squared error method
+Figure 3.1: Historical pedestrian and cyclist fatality data from 2009-2015 were plotted for seven major cities. Actual scores are plotted as points, which are then connected by thin lines for each city. Thick trend lines are plotted to indicate the general direction of the raw data.
 </p>
 </div>
-<div id="trends" class="section level2">
-<h2><span class="header-section-number">3.1</span> Trends</h2>
-<p>fixed = fatalities_per_capita ~ 1 + year_offset, random = ~ 1 + year_offset | city,</p>
+</div>
+<div id="near-future-trends" class="section level2">
+<h2><span class="header-section-number">3.2</span> Near Future trends</h2>
+<p>A more sophisticated regression model was built with the <strong>nlme</strong> library in order to obtain a more accurate line estimate that properly accounts for both within- and between-city variance.</p>
+\begin{align*}
+  fixed &amp;= \textit{fatalities_per_capita} \sim 1 + \textit{year_offset} \\
+  random &amp;=~ \sim 1 + \textit{year_offset}~|~\textit{city}
+\end{align*}
+<p>The trend lines were then extended into the near future in order to predict pedestrian and cyclist fatality rates. These results are plotted in Figure <a href="results.html#fig:trends">3.2</a>.</p>
 <div class="figure" style="text-align: center"><span id="fig:trends"></span>
 <img src="pedestrian-cyclist-safety_files/figure-html/trends-1.png" alt="A " width="672" />
 <p class="caption">
@@ -118,8 +135,10 @@ Figure 3.2: A
 </p>
 </div>
 </div>
-<div id="direct-comparison-nyc-and-toronto" class="section level2">
-<h2><span class="header-section-number">3.2</span> Direct Comparison: NYC and Toronto</h2>
+<div id="featured-comparisons" class="section level2">
+<h2><span class="header-section-number">3.3</span> Featured Comparisons</h2>
+<div id="nyc-and-toronto" class="section level3">
+<h3><span class="header-section-number">3.3.1</span> NYC and Toronto</h3>
 <p>95% confidence intervals have been added around the trend lines, enabling direct comparisons between cities.</p>
 <p>In 2009, New York City had the greatest pedestrian and cyclist fatality rate among all cities included in the study. Toronto caught up to New York City in 2013, and by 2015 actually surpasses New York City in absolute terms - although this difference is not statistically significant.</p>
 <p>If the trend lines are extended into the near future, we would expect to find that Toronto will become significantly more dangerous than New York City for pedestrians and cyclists. As New York City was previously the most dangerous, Toronto is therefore trending to become most dangerous among the 7 cities studied.</p>
@@ -132,8 +151,8 @@ Figure 3.3: Caption as
 </p>
 </div>
 </div>
-<div id="direct-comparison-amsterdam-and-toronto" class="section level2">
-<h2><span class="header-section-number">3.3</span> Direct Comparison: Amsterdam and Toronto</h2>
+<div id="amsterdam-and-toronto" class="section level3">
+<h3><span class="header-section-number">3.3.2</span> Amsterdam and Toronto</h3>
 <p>Interestingly, in 2009 pedestrian and cyclist fatalities in Toronto were not significantly different from Amsterdam’s rates. However, by 2011 Toronto did have significantly more fatalities and the gap appears to be widening. In contrast, Amsterdam appears to have a relatively constant rate of pedestrian and cyclist fatalities per capita.</p>
 <div class="figure" style="text-align: center"><span id="fig:amsterdam-toronto"></span>
 <img src="pedestrian-cyclist-safety_files/figure-html/amsterdam-toronto-1.png" alt="Caption er" width="672" />
@@ -142,6 +161,13 @@ Figure 3.4: Caption er
 </p>
 </div>
 </div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>ggplot2 includes convenient options for quickly fitting a line to a set of points<a href="results.html#fnref1">↩</a></p></li>
+</ol>
 </div>
             </section>
 
@@ -187,6 +213,17 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

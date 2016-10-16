@@ -49,17 +49,16 @@ If these trends continue for another 3 years, Toronto will become significantly 
 Toronto pedestrian and cyclist fatality data were collected for the 7-year period of 2009-2015.
 Similar data were collected for comparable cities.  The cities in this study are:
 
-- Amsterdam
-- Chicago
-- Copenhagen
-- London
-- Los Angeles
-- New York City
-- Toronto
+- Amsterdam (NL)
+- Chicago (US)
+- Copenhagen (DK)
+- London (UK)
+- Los Angeles (US)
+- New York City (US)
+- Toronto (CA)
 
-The four US and Canadian cities were selected because they are the largest cities in those countries.
-The three European cities were chosen for other reasons.
-London was selected for its political relationship to Canada, but otherwise this choice was largely convenient.
+Four US and Canadian cities were selected for being the largest cities among those countries.
+London was selected partly for its political relationship to Canada, but otherwise for convenience since London transit data are extremely simple to obtain.
 Finally, Amsterdam and Copenhagen were selected for their good transit safety reputations, which would permit a baseline comparison.
 
 ## Data Collection
@@ -106,23 +105,36 @@ Together with the raw data, which are available from the same source, this repor
 
 # Results
 
-The rate of pedestrian and cyclist fatalities per 100,000 residents are plotted in Figure \@ref(fig:per-capita-metro).
+The general analytic approach for this work is to visualize the historical record then fit trend lines to each city.  This approach permits the basic exploration of past years as well as rudimentary predictions for the near future.  Because there are many measurements for each city, it is possible to isolate variance both within- and between-cities.  When this variance is visualized as 95% confidence interval bands, cities may be directly compared to determine the statistical significance of any differences.
 
-```{r per-capita-metro, fig.height=4, fig.align="center", fig.cap="The trend line for each city is fit to the raw values with a simple least squared error method"}
+## Historical trends
+
+The rate of pedestrian and cyclist fatalities per 100,000 residents are plotted in Figure \@ref(fig:per-capita-metro).  The trend line for each city is fit to the raw values with a simple least squared error method ^[ggplot2 includes convenient options for quickly fitting a line to a set of points].  Due in part to the basic estimation process, the trends for New York City and Toronto appear to intersect in 2015.  This result indicates Toronto is more dangerous to pedestrians and cyclists than each other city on a per capita basis, both in terms of the actual fatality rate in 2015 and in terms of the fatality rate trend.
+
+```{r per-capita-metro, fig.height=4, fig.align="center", fig.cap="Historical pedestrian and cyclist fatality data from 2009-2015 were plotted for seven major cities.  Actual scores are plotted as points, which are then connected by thin lines for each city.  Thick trend lines indicate the general direction of the raw data."}
 per_capita_metro_plot
 ```
 
-## Trends
+## Near Future trends
 
-  fixed = fatalities_per_capita ~ 1 + year_offset,
-  random = ~ 1 + year_offset | city,
+A more sophisticated regression model was built with the **nlme** library in order to obtain a more accurate line estimate that properly accounts for both within- and between-city variance.
 
+\begin{align*}
+  fixed &= \textit{fatalities_per_capita} \sim 1 + \textit{year_offset} \\
+  random &=~ \sim 1 + \textit{year_offset}~|~\textit{city}
+\end{align*}
+
+The trend lines were then extended into the future in order to predict pedestrian and cyclist fatality rates.  These results are plotted in Figure \@ref(fig:trends).
 
 ```{r trends, fig.height=4, fig.align="center", fig.cap="A "}
 trends_plot
 ```
 
-## Direct Comparison: NYC and Toronto
+Estimations in the more distant future will be less reliable than those in the near future.  If these trends hold, then Toronto is on track to become more dangerous to pedestrians and cyclists than each other city.  By 2015, Toronto has already become indistinguishable from London, 
+
+## Featured Comparisons
+
+### NYC and Toronto
 
 95% confidence intervals have been added around the trend lines, enabling direct comparisons between cities.
 
@@ -141,7 +153,7 @@ If these trends are extended just 2 or 3 years into the future, then we would ex
 nyc_toronto_plot
 ```
 
-## Direct Comparison: Amsterdam and Toronto
+### Amsterdam and Toronto
 
 Interestingly, in 2009 pedestrian and cyclist fatalities in Toronto were not significantly different from Amsterdam's rates.
 However, by 2011 Toronto did have significantly more fatalities and the gap appears to be widening.
@@ -158,6 +170,8 @@ However, by 2015 Toronto had risen to the highest number of pedestrian and cycli
 
 Although this report was originally motivated by conditions in the city of Toronto, the results can be used to tell a story about each city.
 
+It is worth considering what London is doing, because it is trending to become safer than every North American city in the study.  Although this study cannot answer this question, it is worth considering whether any policies enacted by London might be responsible for the drop in fatality rates.  For example, London has adopted ...
+
 # Conclusion
 
 - There are risks inherint in following trends
@@ -169,6 +183,8 @@ Although this report was originally motivated by conditions in the city of Toron
 # Appendix
 
 ## Trend lines
+
+<!-- make this a bookdown table, and create a reference to it. -->
 
 ```{r trend-table}
 trend_kable
