@@ -95,14 +95,14 @@ Traffic safety data varies across international jurisdictions due to subtle diff
 Another factor affecting the traffic safety record is the agency responsible for recording that data.
 In the case of the City of Amsterdam, this responsibility shifted from the police to the health system, resulting in a "hiccup" in the available data during the transition.
 In other cases, city-wide traffic mortality data were not stratified by transit method to permit the differentiation of cyclists from pedestrians.
-In yet other cases, there may have simply been no political will to record pedestrian and cyclist fatality data until recently.
+In yet other cases, there may have simply been no policy to record pedestrian and cyclist fatality data until recently.
 Together, these factors limit the number of years of data available for various cities.
 
 ## Reproducibility
 
 The R Statistical Environment was used for analysis and plotting.
-All scripts used to generate this report are available online: [https://github.com/iandennismiller/road-safety/](https://github.com/iandennismiller/road-safety/).
-Together with the raw data, which are available from the same source, this report may be reproduced.
+All scripts used to generate this report are available online^[[https://github.com/iandennismiller/road-safety/](https://github.com/iandennismiller/road-safety/)].
+Together with the raw data, which are available from the same source, this report may be reproduced in its entirety.
 
 # Results
 
@@ -113,7 +113,7 @@ When this variance is visualized as 95% confidence interval bands, cities may be
 
 ## Historical trends
 
-```{r per-capita-metro, fig.height=4, fig.align="center", fig.cap="Historical pedestrian and cyclist fatality data from 2009-2015 were plotted for seven major cities.  Actual scores are plotted as points, which are then connected by thin lines for each city.  Thick trend lines indicate the general direction of the raw data."}
+```{r per-capita-metro, fig.height=3.5, fig.align="center", fig.cap="Historical pedestrian and cyclist fatality data from 2009-2015 were plotted for seven major cities.  Actual scores are plotted as points, which are then connected by thin lines for each city.  Thick trend lines indicate the general direction of the raw data."}
 per_capita_metro_plot
 ```
 
@@ -124,12 +124,12 @@ This result indicates Toronto is more dangerous to pedestrians and cyclists than
 
 ## Future trends
 
-```{r trends, fig.height=4, fig.align="center", fig.cap="Historical pedestrian and cyclist fatality rate trends are extrapolated into the near future."}
+```{r trends, fig.height=3.5, fig.align="center", fig.cap="Historical pedestrian and cyclist fatality rate trends are extrapolated into the near future."}
 trends_plot
 ```
 
 A more sophisticated regression model was built with the **nlme** library in order to obtain a more accurate line estimate that properly accounts for both within- and between-city variance.
-The fitted city intercepts and slopes are available in the Appendix.
+The fitted city intercepts and slopes are available in Table \@ref(tab:trend-table).
 
 \begin{align*}
     fixed &= \text{fatalities} \sim 1 + \text{year} \\
@@ -151,7 +151,7 @@ This sort of analysis may be interpreted similarly to a *t-test*.
 
 ### Toronto and New York City
 
-```{r nyc-toronto, fig.height=4, fig.align="center", fig.cap="Toronto and New York City pedestrian and cyclist fatality rates are visualized, along with 95-percent confidence intervals."}
+```{r nyc-toronto, fig.height=3.5, fig.align="center", fig.cap="Toronto and New York City pedestrian and cyclist fatality rates are visualized, along with 95-percent confidence intervals."}
 nyc_toronto_plot
 ```
 
@@ -166,7 +166,7 @@ As New York City was previously the most dangerous, Toronto is therefore trendin
 
 ### Toronto and Amsterdam
 
-```{r amsterdam-toronto, fig.height=4, fig.align="center", fig.cap="Toronto and Amsterdam pedestrian and cyclist fatality rates are visualized, along with 95-percent confidence intervals."}
+```{r amsterdam-toronto, fig.height=3.5, fig.align="center", fig.cap="Toronto and Amsterdam pedestrian and cyclist fatality rates are visualized, along with 95-percent confidence intervals.  In 2011, the rate in Toronto was actually lower than Amsterdam's, which illustrates the difference between a single measurement versus a trend."}
 amsterdam_toronto_plot
 ```
 
@@ -175,17 +175,15 @@ Importantly, it is often claimed that the Amsterdam model delivers increased saf
 If these safety claims are true, Amsterdam would provide a baseline fatality rate representing what might be obtained through transit policy alone.
 
 To investigate, Toronto and Amsterdam are plotted in Figure \@ref(fig:amsterdam-toronto).
-Based on our seven-year observation, only Copenhagen is safer than Amsterdam for pedestrians and cyclists ^[See Appendix for city scores.].
+Based on our seven-year observation, only Copenhagen is safer than Amsterdam for pedestrians and cyclists (see Table \@ref(tab:trend-table)).
 In fact, Toronto does not appear to be significantly more dangerous than Amsterdam to begin with ^[although this is partly a statistical artifact due in part to the unreliability of estimates at the time domain limits].
 However, during the observation period, Toronto rapidly pulls away from Amsterdam to become significantly more dangerous to pedestrians and cyclists.
-
-<!-- # Discussion -->
 
 # Discussion
 
 This analysis suggests that in 2009 Toronto was among the safer cities in the study.
 However, in 2015 Toronto had the highest rate of pedestrian and cyclist fatalities in the study, and is trending to become the most dangerous of these cities within the next four years.
-This paints a rather grim picture for the future of Toronto, because the trend is relatively steep in relation to the others and it is trending in the direction of greater danger.
+This paints a rather grim picture for the future of Toronto: the trend is relatively steep in relation to the other cities and it is trending in the direction of greater danger.
 Toronto is somehow different from all the other cities in terms of this particular trend.
 
 ## Limitations
@@ -229,12 +227,16 @@ In conclusion, there is now evidence that the pedestrian and cyclist fatality ra
 
 ## Trend lines
 
-<!-- make this a bookdown table, and create a reference to it. -->
-
 ```{r trend-table}
-trend_kable
+trend_table = slopes
+trend_table$city = NULL
+knitr::kable(
+    trend_table,
+    booktabs=TRUE,
+    caption='Fitted Model.  These slopes and intercepts specify fatality rate trend lines for each city.'
+)
 ```
 
 ## License
 
-[Creative Commons (CC BY-SA 4.0) 2016 Ian Dennis Miller](https://creativecommons.org/licenses/by-sa/4.0/)
+[Creative Commons (CC BY-SA 4.0) 2016 Ian Dennis Miller](https://github.com/iandennismiller/road-safety/blob/master/License.md)

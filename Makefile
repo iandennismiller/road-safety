@@ -5,9 +5,6 @@ analysis:
 	cd analysis && Rscript -e "library(bookdown); bookdown::render_book('toronto-road-safety.Rmd', 'bookdown::gitbook')"
 	convert -resize '600' docs/pedestrian-cyclist-safety_files/figure-html/trends-1.png docs/trends-thumb.png
 
-all: analysis pdf
-	@echo "OK"
-
 pdf:
 	cd analysis && Rscript -e "library(bookdown); bookdown::render_book('toronto-road-safety.Rmd', 'bookdown::pdf_book')"
 
@@ -22,4 +19,8 @@ clean:
 	rm -rf analysis/_bookdown_files
 	rm -rf analysis/_book
 
-.PHONY: all analysis release open clean
+release: analysis pdf
+	git commit -am "release"
+	git push
+
+.PHONY: analysis release open clean

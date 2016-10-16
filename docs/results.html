@@ -121,7 +121,7 @@ MathJax.Hub.Config({
 Figure 3.1: Historical pedestrian and cyclist fatality data from 2009-2015 were plotted for seven major cities. Actual scores are plotted as points, which are then connected by thin lines for each city. Thick trend lines indicate the general direction of the raw data.
 </p>
 </div>
-<p>The rate of pedestrian and cyclist fatalities per 100,000 residents are plotted in Figure <a href="results.html#fig:per-capita-metro">3.1</a>. The trend line for each city is fitted to the raw values using a simple least squared error method <a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>. Due in part to the basic estimation process, the trends for New York City and Toronto appear to intersect in 2015. This result indicates Toronto is more dangerous to pedestrians and cyclists than each other city on a per capita basis, both in terms of the actual fatality rate in 2015 and in terms of the fatality rate trend.</p>
+<p>The rate of pedestrian and cyclist fatalities per 100,000 residents are plotted in Figure <a href="results.html#fig:per-capita-metro">3.1</a>. The trend line for each city is fitted to the raw values using a simple least squared error method <a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>. Due in part to the basic estimation process, the trends for New York City and Toronto appear to intersect in 2015. This result indicates Toronto is more dangerous to pedestrians and cyclists than each other city on a per capita basis, both in terms of the actual fatality rate in 2015 and in terms of the fatality rate trend.</p>
 </div>
 <div id="future-trends" class="section level2">
 <h2><span class="header-section-number">3.2</span> Future trends</h2>
@@ -131,7 +131,7 @@ Figure 3.1: Historical pedestrian and cyclist fatality data from 2009-2015 were 
 Figure 3.2: Historical pedestrian and cyclist fatality rate trends are extrapolated into the near future.
 </p>
 </div>
-<p>A more sophisticated regression model was built with the <strong>nlme</strong> library in order to obtain a more accurate line estimate that properly accounts for both within- and between-city variance. The fitted city intercepts and slopes are available in the Appendix.</p>
+<p>A more sophisticated regression model was built with the <strong>nlme</strong> library in order to obtain a more accurate line estimate that properly accounts for both within- and between-city variance. The fitted city intercepts and slopes are available in Table <a href="appendix.html#tab:trend-table">6.1</a>.</p>
 \begin{align*}
     fixed &amp;= \text{fatalities} \sim 1 + \text{year} \\
     random &amp;=~ \sim 1 + \text{year} ~ | ~ \text{city}
@@ -155,22 +155,20 @@ Figure 3.3: Toronto and New York City pedestrian and cyclist fatality rates are 
 <div id="toronto-and-amsterdam" class="section level3">
 <h3><span class="header-section-number">3.3.2</span> Toronto and Amsterdam</h3>
 <div class="figure" style="text-align: center"><span id="fig:amsterdam-toronto"></span>
-<img src="pedestrian-cyclist-safety_files/figure-html/amsterdam-toronto-1.png" alt="Toronto and Amsterdam pedestrian and cyclist fatality rates are visualized, along with 95-percent confidence intervals." width="672" />
+<img src="pedestrian-cyclist-safety_files/figure-html/amsterdam-toronto-1.png" alt="Toronto and Amsterdam pedestrian and cyclist fatality rates are visualized, along with 95-percent confidence intervals.  In 2011, the rate in Toronto was actually lower than Amsterdam's, which illustrates the difference between a single measurement versus a trend." width="672" />
 <p class="caption">
-Figure 3.4: Toronto and Amsterdam pedestrian and cyclist fatality rates are visualized, along with 95-percent confidence intervals.
+Figure 3.4: Toronto and Amsterdam pedestrian and cyclist fatality rates are visualized, along with 95-percent confidence intervals. In 2011, the rate in Toronto was actually lower than Amsterdam’s, which illustrates the difference between a single measurement versus a trend.
 </p>
 </div>
 <p>Amsterdam is an interesting city for comparison to Toronto because it is widely touted as a model transit city balancing the requirements of automobiles, pedestrians, and cyclists. Importantly, it is often claimed that the Amsterdam model delivers increased safety. If these safety claims are true, Amsterdam would provide a baseline fatality rate representing what might be obtained through transit policy alone.</p>
-<p>To investigate, Toronto and Amsterdam are plotted in Figure <a href="results.html#fig:amsterdam-toronto">3.4</a>. Based on our seven-year observation, only Copenhagen is safer than Amsterdam for pedestrians and cyclists <a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>. In fact, Toronto does not appear to be significantly more dangerous than Amsterdam to begin with <a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>. However, during the observation period, Toronto rapidly pulls away from Amsterdam to become significantly more dangerous to pedestrians and cyclists.</p>
-<!-- # Discussion -->
+<p>To investigate, Toronto and Amsterdam are plotted in Figure <a href="results.html#fig:amsterdam-toronto">3.4</a>. Based on our seven-year observation, only Copenhagen is safer than Amsterdam for pedestrians and cyclists (see Table <a href="appendix.html#tab:trend-table">6.1</a>). In fact, Toronto does not appear to be significantly more dangerous than Amsterdam to begin with <a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>. However, during the observation period, Toronto rapidly pulls away from Amsterdam to become significantly more dangerous to pedestrians and cyclists.</p>
 </div>
 </div>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="1">
-<li id="fn1"><p>ggplot2 includes convenient options for quickly fitting a line to a set of points<a href="results.html#fnref1">↩</a></p></li>
-<li id="fn2"><p>See Appendix for city scores.<a href="results.html#fnref2">↩</a></p></li>
+<ol start="2">
+<li id="fn2"><p>ggplot2 includes convenient options for quickly fitting a line to a set of points<a href="results.html#fnref2">↩</a></p></li>
 <li id="fn3"><p>although this is partly a statistical artifact due in part to the unreliability of estimates at the time domain limits<a href="results.html#fnref3">↩</a></p></li>
 </ol>
 </div>
