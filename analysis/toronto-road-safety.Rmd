@@ -1,7 +1,7 @@
 ---
 title: "Pedestrian and Cyclist Death Rates: a Comparison between several Major Cities"
 author: "Ian Dennis Miller"
-date: "October 15, 2016"
+date: "October 16, 2016"
 license: "Creative Commons (CC BY-SA 4.0) 2016 Ian Dennis Miller"
 documentclass: article
 output:
@@ -31,8 +31,8 @@ In the previous year, Toronto saw more deaths by motor vehicle than by gun, agai
 But is the automobile death toll *unreasonably* high?
 After all, isn't a bustling city with millions of trips per day bound to lead to a few collisions, if only by accident?
 Furthermore, how do we know Toronto even has a problem in the first place?
-It's possible comparable cities have similar or even worse fatality rates.
-From a cynical viewpoint, it's possible these deaths are an inevitable cost of civic progress.
+It's possible that comparable cities have similar or even worse fatality rates.
+It's even possible these deaths are the inevitable cost of civic progress.
 
 The question of pedestrian and cyclist safety is particularly important right now.
 There is a widely shared "gut feeling" that Toronto streets are becoming more chaotic, but there is uncertainty about the fundamental facts of the debate.
@@ -43,7 +43,7 @@ To perform this comparison, yearly pedestrian and cyclist fatality data were col
 The historical results were plotted and trend lines were fitted to the data, permitting a projection into the near future.
 The results of this report suggest that Toronto has become more dangerous to pedestrians and cyclists during the previous seven years.
 During the same time period, several other cities in the study exhibited safety improvements.
-If these trends continue for another 3 years, Toronto will become significantly more dangerous to pedestrians and cyclists than every other city in the study.
+If these trends continue for another 4 years, Toronto will become significantly more dangerous to pedestrians and cyclists than every other city in the study.
 
 # Methods
 
@@ -142,7 +142,7 @@ If these trends hold for the next four years, then Toronto is on track to become
 By 2015, Toronto has already become indistinguishable from London, and by 2019, Toronto matches New York City's rate.
 During the same prediction interval, both London and New York City are seen to become safer for pedestrians and cyclists.
 
-## Comparisons between Cities
+## Individual Cities
 
 Because we have many observations for each city, it is possible to use the variance between these observations to test for statistically significant differences in average fatality rates between cities.
 A basic *t-test* of this kind may visualized with the help of 95% confidence interval bands that surround each city's trend line.
@@ -218,7 +218,10 @@ Therefore, the ultimate future direction for this work is to inform policy that 
 
 # Conclusion
 
-If we calibrate our safety expectations based upon other cities, then this study presents evidence that Toronto compares unfavourably to the comparison cities that were studied.  Something about road safety is different in Toronto.  Although it is not possible to conclude *why* Toronto looks so different, there is at least a good reason to begin this investigation in earnest.  Therefore, there may well be reason to conclude that the pedestrian and cyclist fatality rate is actually high in the City of Toronto.
+If we calibrate our safety expectations based upon other cities, then this study presents evidence that Toronto compares unfavourably to the other cities that were studied.
+Something about road safety is different in Toronto.
+Although it is not possible to conclude *why* Toronto looks so different, there is at least a good reason to begin this investigation in earnest.
+In conclusion, there is now evidence that the pedestrian and cyclist fatality rate is actually high in the City of Toronto.
 
 <!-- # References -->
 
