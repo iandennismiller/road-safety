@@ -1,5 +1,8 @@
 - future questions
     + [ ] have cities that implemented Vision Zero policies reduced fatality rates?
+    + [ ] control for kms of bike lanes
+    + [ ] control for number of crosswalks or intersections
+    + [ ] control for number of car trips per day
 - additional cities
     + [ ] Montreal
     + [ ] Vancouver

@@ -1,48 +1,55 @@
 ---
-title: "Road Safety in Toronto"
+title: "Pedestrian and Cyclist Death Rates: a Comparison between several Major Cities"
 author: "Ian Dennis Miller"
-date: "July 14, 2016"
-# output: github_document
-knit: "bookdown::render_book"
-site: "bookdown::bookdown_site"
-book_filename: toronto-road-safety
-output:
- bookdown::gitbook: default
+date: "October 15, 2016"
 license: "Creative Commons (CC BY-SA 4.0) 2016 Ian Dennis Miller"
+site: "bookdown::bookdown_site"
+book_filename: "pedestrian-cyclist-safety"
 output_dir: "docs"
-# documentclass: book
+output:
+  bookdown::gitbook: default
+  bookdown::pdf_book:
+    toc: no
+documentclass: article
 # bibliography: ["book.bib", "packages.bib"]
-# biblio-style: apalike
+biblio-style: apalike
 # link-citations: yes
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
-# library(bookdown)
+knitr::opts_chunk$set(cache = TRUE)
 source("analysis.R")
 source("plots.R")
 ```
 
-**Working Paper**
-
-**This is not the final report.**
-
 # Introduction
 
-- this report focuses on the city of Toronto
-- the main question is: are Toronto streets safe for pedestrians and cyclists?
-- it is difficult to characterize what "safety" even means
-- we can understand Toronto's relative safety by comparing to other cities
-- because many cities began recording cyclist and pedestrian fatalities online starting in the 2000s, it is possible to obtain longitudinal mortality data
+<div align="center" style="font-size: 20pt">
+<p>Working Paper. This is not the final report.</p>
+</div>
 
-[Raw CSV data collected in this study are available online.](https://github.com/iandennismiller/road-safety/blob/master/data/city-safety-comparison.csv)
+During the Summer of 2016 in Toronto, more than 1,000 pedestrians and cyclists were struck by automobiles.
+<!-- CITE: https://www.thestar.com/news/gta/transportation/2016/09/23/more-than-1000-cyclists-and-pedestrians-hit-on-toronto-streets-since-june-1.html -->
+This finding grabbed headlines because, at a rate of a dozen collisions per day, the number sounds shockingly high.
+In the previous year, Toronto saw more deaths by motor vehicle than by gun, again shocking the city with a death toll that *seemed* high.
 
-# Background
+But is the automobile death toll *unreasonably* high?
+After all, isn't a bustling city with millions of trips per day bound to lead to a few collisions, if only by accident?
+Furthermore, how do we know Toronto even has a problem in the first place?
+It's possible comparable cities have similar or even worse fatality rates.
+From a cynical viewpoint, it's possible these deaths are simply the cost of civic progress.
 
-- historical trends can be helpful for predicting the future
-- comparisons between cities can also be helpful
-- there are many factors that contribute to road safety
-- the per-capita adjustment for mortality statistics can help for between-cities comparison
+The question of pedestrian and cyclist safety is particularly important right now.
+There is a widely shared "gut feeling" that Toronto streets are becoming more chaotic, but there is uncertainty about the fundamental facts of the debate.
+This report seeks to provide a comparison between Toronto and other cities on the basis of pedestrian and cyclist fatalities.
+By looking at Toronto in the context of other major cities across North America and Europe, it will be possible to determine whether or not Toronto is relatively safe.
+
+To perform this comparison, yearly pedestrian and cyclist fatality data were collected from seven major cities.
+The historical results were plotted and trend lines were fitted to the data, permitting a projection into the near future.
+The results of this report suggest that Toronto has become more dangerous to pedestrians and cyclists during the previous seven years.
+During the same time period, several other cities in the study exhibited safety improvements.
+If these trends continue for another 3 years, Toronto will become significantly more dangerous than every other city in the study.
 
 # Methods
 
@@ -57,9 +64,14 @@ Similar data were collected for comparable cities.  The cities in this study are
 - New York City
 - Toronto
 
+The four US and Canadian cities were selected because they are the largest cities in those countries.
+The three European cities were chosen for other reasons.
+London was selected for its political relationship to Canada, but otherwise this choice was largely convenient.
+Finally, Amsterdam and Copenhagen were selected for their good transit safety reputations, which would permit a baseline comparison.
+
 ## Data Fields
 
-The following data fields were collected for each year and for each city in this study:
+The following data fields were collected for each year and city in this study:
 
 - city
 - metro area population
@@ -93,7 +105,7 @@ per_capita_metro_plot
 
 ## Trends
 
-```{r trends}
+```{r trends, fig.align="center", fig.cap="Caption bf"}
 trends_plot
 ```
 
@@ -109,7 +121,7 @@ In the case of New York City, we see that Toronto begins comparatively safer but
 
 The 7-year trend for New York is negative, whereas the 7-year trend for Toronto is positive.  If these trends are extended just 2 or 3 years into the future, then we would expect to find that Toronto has become significantly more dangerous than New York City.
 
-```{r nyc_toronto}
+```{r nyc-toronto, fig.align="center", fig.cap="Caption as"}
 nyc_toronto_plot
 ```
 
@@ -117,13 +129,15 @@ nyc_toronto_plot
 
 Interestingly, in 2009 pedestrian and cyclist fatalities in Toronto were not significantly different from Amsterdam's rates.  However, by 2011 Toronto did have significantly more fatalities and the gap appears to be widening.  In contrast, Amsterdam appears to have a relatively constant rate of pedestrian and cyclist fatalities per capita.
 
-```{r amsterdam_toronto}
+```{r amsterdam-toronto, fig.align="center", fig.cap="Caption er"}
 amsterdam_toronto_plot
 ```
 
 # Discussion
 
 This analysis suggests that in 2009 Toronto was one of the safer cities in the study.  However, by 2015 Toronto had risen to the highest number of pedestrian and cyclist fatalities per capita among the 7 cities studied, and is trending to become significantly more dangerous than all other cities studied.
+
+Although this report was originally motivated by conditions in the city of Toronto, the results can be used to tell a story about each city.
 
 # Conclusion
 
@@ -137,7 +151,7 @@ This analysis suggests that in 2009 Toronto was one of the safer cities in the s
 
 ## Trend lines
 
-```{r trend_table}
+```{r trend-table}
 trend_kable
 ```
 
