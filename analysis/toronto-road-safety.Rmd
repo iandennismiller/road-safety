@@ -26,10 +26,9 @@ source("plots.R")
 <p>Working Paper. This is not the final report.</p>
 </div>
 
-During the Summer of 2016 in Toronto, more than 1,000 pedestrians and cyclists were struck by automobiles.
-<!-- CITE: https://www.thestar.com/news/gta/transportation/2016/09/23/more-than-1000-cyclists-and-pedestrians-hit-on-toronto-streets-since-june-1.html -->
-This finding grabbed headlines because, at a rate of a dozen collisions per day, the number sounds shockingly high.
-In the previous year, Toronto saw more deaths by motor vehicle than by gun, again shocking the city with a death toll that *seemed* high.
+During the Summer of 2016 in Toronto, more than 1,000 pedestrians and cyclists were struck by automobiles [@Spurr:2016aa].
+This finding grabbed headlines because, at a rate of nearly a dozen collisions per day, the number sounds shockingly high.
+In the previous year, Toronto saw more deaths by motor vehicle [@cbc-2015] than by gun [@Gillis:2016aa], again shocking the city with a death toll that *seemed* high.
 
 But is the automobile death toll *unreasonably* high?
 After all, isn't a bustling city with millions of trips per day bound to lead to a few collisions, if only by accident?
@@ -38,7 +37,7 @@ It's possible that comparable cities have similar or even worse fatality rates.
 It's even possible these deaths are the inevitable cost of civic progress.
 
 The question of pedestrian and cyclist safety is particularly important right now.
-There is a widely shared "gut feeling" that Toronto streets are becoming more chaotic, but there is uncertainty about the fundamental facts of the debate.
+There is a widely shared "gut feeling" that Toronto streets are becoming more chaotic [@Charles-Hain:2016aa], but there is uncertainty about the fundamental facts of the debate.
 This report seeks to provide a comparison between Toronto and other cities on the basis of pedestrian and cyclist fatalities.
 By looking at Toronto in the context of other major cities across North America and Europe, it will be possible to determine whether Toronto is relatively safe or not.
 
@@ -77,6 +76,7 @@ The following data fields were collected for each year and city in this study:
 
 In addition to raw fields, citation data were collected for each observation.
 These data are stored as Comma Separated Values, and [the resulting CSV file is available for download](https://github.com/iandennismiller/road-safety/blob/master/data/city-safety-comparison.csv).
+Individual citations for every data point are available in the CSV file; data citations are not listed in this article's references.
 
 ## Population and Road Use
 
@@ -121,7 +121,7 @@ per_capita_metro_plot
 ```
 
 The rate of pedestrian and cyclist fatalities per 100,000 residents are plotted in Figure \@ref(fig:per-capita-metro).
-The trend line for each city is fitted to the raw values using a simple least squared error method ^[ggplot2 includes convenient options for quickly fitting a line to a set of points].
+The trend line for each city is fitted to the raw values using a simple least squared error method [@R-ggplot2]^[ggplot2 includes convenient options for quickly fitting a line to a set of points].
 Due in part to the basic estimation process, the trends for New York City and Toronto appear to intersect in 2015.
 This result indicates Toronto is more dangerous to pedestrians and cyclists than each other city on a per capita basis, both in terms of the actual fatality rate in 2015 and in terms of the fatality rate trend.
 
@@ -131,7 +131,7 @@ This result indicates Toronto is more dangerous to pedestrians and cyclists than
 trends_plot
 ```
 
-A more sophisticated regression model was built with the **nlme** library in order to obtain a more accurate line estimate that properly accounts for both within- and between-city variance.
+A more sophisticated regression model was built with the nlme library [@R-nlme] in order to obtain a more accurate line estimate that properly accounts for both within- and between-city variance.
 The fitted city intercepts and slopes are available in Table \@ref(tab:trend-table).
 
 \begin{align*}
@@ -229,6 +229,8 @@ In conclusion, there is now evidence that the pedestrian and cyclist fatality ra
 # Appendix
 
 ## Trend lines
+
+Slopes and Intercepts corresponding to the fitted trend model are presented in Table \@ref(tab:trend-table).  Fatality rates are presented in units per 100,000 residents.  The lines specified by these equations were then used to extrapolate historical trends into the near future.
 
 ```{r trend-table}
 trend_table = slopes

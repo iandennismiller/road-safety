@@ -122,7 +122,7 @@ MathJax.Hub.Config({
 Figure 3.1: Historical pedestrian and cyclist fatality data from 2009-2015 were plotted for seven major cities. Actual scores are plotted as points, which are then connected by thin lines for each city. Thick trend lines indicate the general direction of the raw data.
 </p>
 </div>
-<p>The rate of pedestrian and cyclist fatalities per 100,000 residents are plotted in Figure <a href="results.html#fig:per-capita-metro">3.1</a>. The trend line for each city is fitted to the raw values using a simple least squared error method.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> Due in part to the basic estimation process, the trends for New York City and Toronto appear to intersect in 2015. This result indicates Toronto is more dangerous to pedestrians and cyclists than each other city on a per capita basis, both in terms of the actual fatality rate in 2015 and in terms of the fatality rate trend.</p>
+<p>The rate of pedestrian and cyclist fatalities per 100,000 residents are plotted in Figure <a href="results.html#fig:per-capita-metro">3.1</a>. The trend line for each city is fitted to the raw values using a simple least squared error method <span class="citation">(Wickham and Chang <a href="#ref-R-ggplot2">2016</a>)</span><a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>. Due in part to the basic estimation process, the trends for New York City and Toronto appear to intersect in 2015. This result indicates Toronto is more dangerous to pedestrians and cyclists than each other city on a per capita basis, both in terms of the actual fatality rate in 2015 and in terms of the fatality rate trend.</p>
 </div>
 <div id="future-trends" class="section level2">
 <h2><span class="header-section-number">3.2</span> Future trends</h2>
@@ -132,7 +132,7 @@ Figure 3.1: Historical pedestrian and cyclist fatality data from 2009-2015 were 
 Figure 3.2: Historical pedestrian and cyclist fatality rate trends are extrapolated into the near future.
 </p>
 </div>
-<p>A more sophisticated regression model was built with the <strong>nlme</strong> library in order to obtain a more accurate line estimate that properly accounts for both within- and between-city variance. The fitted city intercepts and slopes are available in Table <a href="appendix.html#tab:trend-table">6.1</a>.</p>
+<p>A more sophisticated regression model was built with the nlme library <span class="citation">(Pinheiro, Bates, and R-core <a href="#ref-R-nlme">2016</a>)</span> in order to obtain a more accurate line estimate that properly accounts for both within- and between-city variance. The fitted city intercepts and slopes are available in Table <a href="appendix.html#tab:trend-table">6.1</a>.</p>
 <span class="math display">\[\begin{align*}
     fixed &amp;= \text{fatalities} \sim 1 + \text{year} \\
     random &amp;=~ \sim 1 + \text{year} ~ | ~ \text{city}
@@ -164,6 +164,15 @@ Figure 3.4: Toronto and Amsterdam pedestrian and cyclist fatality rates are visu
 <p>Amsterdam is an interesting city for comparison to Toronto because it is widely touted as a model transit city balancing the requirements of automobiles, pedestrians, and cyclists. Importantly, it is often claimed that the Amsterdam model delivers increased safety. If these safety claims are true, Amsterdam would provide a baseline fatality rate representing what might be obtained through transit policy alone.</p>
 <p>To investigate, Toronto and Amsterdam are plotted in Figure <a href="results.html#fig:amsterdam-toronto">3.4</a>. Based on our seven-year observation, only Copenhagen is safer than Amsterdam for pedestrians and cyclists (see Table <a href="appendix.html#tab:trend-table">6.1</a>). At least initially, Toronto does not appear to be significantly more dangerous than Amsterdam<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>. However, during the observation period, Toronto rapidly pulls away from Amsterdam to become significantly more dangerous to pedestrians and cyclists.</p>
 </div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-R-ggplot2">
+<p>Wickham, Hadley, and Winston Chang. 2016. <em>Ggplot2: An Implementation of the Grammar of Graphics</em>. <a href="https://CRAN.R-project.org/package=ggplot2" class="uri">https://CRAN.R-project.org/package=ggplot2</a>.</p>
+</div>
+<div id="ref-R-nlme">
+<p>Pinheiro, José, Douglas Bates, and R-core. 2016. <em>Nlme: Linear and Nonlinear Mixed Effects Models</em>. <a href="https://CRAN.R-project.org/package=nlme" class="uri">https://CRAN.R-project.org/package=nlme</a>.</p>
 </div>
 </div>
 <div class="footnotes">
