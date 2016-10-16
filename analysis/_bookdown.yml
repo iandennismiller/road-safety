@@ -2,9 +2,6 @@
 site: "bookdown::bookdown_site"
 book_filename: "pedestrian-cyclist-safety"
 output_dir: "../docs"
-# bibliography: ["book.bib", "packages.bib"]
-biblio-style: apalike
-# link-citations: yes
 bookdown::gitbook:
   config:
     toc:

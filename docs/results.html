@@ -93,6 +93,7 @@ MathJax.Hub.Config({
 <li class="chapter" data-level="6.1" data-path="appendix.html"><a href="appendix.html#trend-lines"><i class="fa fa-check"></i><b>6.1</b> Trend lines</a></li>
 <li class="chapter" data-level="6.2" data-path="appendix.html"><a href="appendix.html#license"><i class="fa fa-check"></i><b>6.2</b> License</a></li>
 </ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 </ul>
 
       </nav>
@@ -121,7 +122,7 @@ MathJax.Hub.Config({
 Figure 3.1: Historical pedestrian and cyclist fatality data from 2009-2015 were plotted for seven major cities. Actual scores are plotted as points, which are then connected by thin lines for each city. Thick trend lines indicate the general direction of the raw data.
 </p>
 </div>
-<p>The rate of pedestrian and cyclist fatalities per 100,000 residents are plotted in Figure <a href="results.html#fig:per-capita-metro">3.1</a>. The trend line for each city is fitted to the raw values using a simple least squared error method <a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>. Due in part to the basic estimation process, the trends for New York City and Toronto appear to intersect in 2015. This result indicates Toronto is more dangerous to pedestrians and cyclists than each other city on a per capita basis, both in terms of the actual fatality rate in 2015 and in terms of the fatality rate trend.</p>
+<p>The rate of pedestrian and cyclist fatalities per 100,000 residents are plotted in Figure <a href="results.html#fig:per-capita-metro">3.1</a>. The trend line for each city is fitted to the raw values using a simple least squared error method.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> Due in part to the basic estimation process, the trends for New York City and Toronto appear to intersect in 2015. This result indicates Toronto is more dangerous to pedestrians and cyclists than each other city on a per capita basis, both in terms of the actual fatality rate in 2015 and in terms of the fatality rate trend.</p>
 </div>
 <div id="future-trends" class="section level2">
 <h2><span class="header-section-number">3.2</span> Future trends</h2>
@@ -132,10 +133,10 @@ Figure 3.2: Historical pedestrian and cyclist fatality rate trends are extrapola
 </p>
 </div>
 <p>A more sophisticated regression model was built with the <strong>nlme</strong> library in order to obtain a more accurate line estimate that properly accounts for both within- and between-city variance. The fitted city intercepts and slopes are available in Table <a href="appendix.html#tab:trend-table">6.1</a>.</p>
-\begin{align*}
+<span class="math display">\[\begin{align*}
     fixed &amp;= \text{fatalities} \sim 1 + \text{year} \\
     random &amp;=~ \sim 1 + \text{year} ~ | ~ \text{city}
-\end{align*}
+\end{align*}\]</span>
 <p>The fitted results of this model are plotted in Figure <a href="results.html#fig:trends">3.2</a>. The trend lines were then extended into the future in order to predict pedestrian and cyclist fatality rates. If these trends hold for the next four years, then Toronto is on track to become more dangerous to pedestrians and cyclists than every other city in the study. By 2015, Toronto has already become indistinguishable from London, and by 2019, Toronto matches New York City’s rate. During the same prediction interval, both London and New York City are seen to become safer for pedestrians and cyclists.</p>
 </div>
 <div id="individual-cities" class="section level2">
@@ -161,7 +162,7 @@ Figure 3.4: Toronto and Amsterdam pedestrian and cyclist fatality rates are visu
 </p>
 </div>
 <p>Amsterdam is an interesting city for comparison to Toronto because it is widely touted as a model transit city balancing the requirements of automobiles, pedestrians, and cyclists. Importantly, it is often claimed that the Amsterdam model delivers increased safety. If these safety claims are true, Amsterdam would provide a baseline fatality rate representing what might be obtained through transit policy alone.</p>
-<p>To investigate, Toronto and Amsterdam are plotted in Figure <a href="results.html#fig:amsterdam-toronto">3.4</a>. Based on our seven-year observation, only Copenhagen is safer than Amsterdam for pedestrians and cyclists (see Table <a href="appendix.html#tab:trend-table">6.1</a>). In fact, Toronto does not appear to be significantly more dangerous than Amsterdam to begin with <a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>. However, during the observation period, Toronto rapidly pulls away from Amsterdam to become significantly more dangerous to pedestrians and cyclists.</p>
+<p>To investigate, Toronto and Amsterdam are plotted in Figure <a href="results.html#fig:amsterdam-toronto">3.4</a>. Based on our seven-year observation, only Copenhagen is safer than Amsterdam for pedestrians and cyclists (see Table <a href="appendix.html#tab:trend-table">6.1</a>). At least initially, Toronto does not appear to be significantly more dangerous than Amsterdam<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>. However, during the observation period, Toronto rapidly pulls away from Amsterdam to become significantly more dangerous to pedestrians and cyclists.</p>
 </div>
 </div>
 </div>

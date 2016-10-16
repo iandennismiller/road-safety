@@ -4,6 +4,9 @@ author: "Ian Dennis Miller"
 date: "October 16, 2016"
 license: "Creative Commons (CC BY-SA 4.0) 2016 Ian Dennis Miller"
 documentclass: article
+bibliography: ["road-safety.bib"]
+biblio-style: apalike
+link-citations: yes
 output:
   bookdown::pdf_book:
     toc: no
@@ -100,7 +103,7 @@ Together, these factors limit the number of years of data available for various 
 
 ## Reproducibility
 
-The R Statistical Environment was used for analysis and plotting.
+The R Statistical Environment [@R-base] was used for analysis and plotting.
 All scripts used to generate this report are available online^[[https://github.com/iandennismiller/road-safety/](https://github.com/iandennismiller/road-safety/)].
 Together with the raw data, which are available from the same source, this report may be reproduced in its entirety.
 
@@ -176,7 +179,7 @@ If these safety claims are true, Amsterdam would provide a baseline fatality rat
 
 To investigate, Toronto and Amsterdam are plotted in Figure \@ref(fig:amsterdam-toronto).
 Based on our seven-year observation, only Copenhagen is safer than Amsterdam for pedestrians and cyclists (see Table \@ref(tab:trend-table)).
-In fact, Toronto does not appear to be significantly more dangerous than Amsterdam to begin with ^[although this is partly a statistical artifact due in part to the unreliability of estimates at the time domain limits].
+At least initially, Toronto does not appear to be significantly more dangerous than Amsterdam^[although this is partly a statistical artifact due in part to the unreliability of estimates at the time domain limits].
 However, during the observation period, Toronto rapidly pulls away from Amsterdam to become significantly more dangerous to pedestrians and cyclists.
 
 # Discussion
@@ -221,7 +224,7 @@ Something about road safety is different in Toronto.
 Although it is not possible to conclude *why* Toronto looks so different, there is at least a good reason to begin this investigation in earnest.
 In conclusion, there is now evidence that the pedestrian and cyclist fatality rate is actually high in the City of Toronto.
 
-<!-- # References -->
+`r if (knitr:::is_html_output()) '<div align="center"><img src="https://iandennismiller.github.io/road-safety/pedestrian-cyclist-safety_files/figure-html/trends-1.png" /></div>'`
 
 # Appendix
 
@@ -240,3 +243,9 @@ knitr::kable(
 ## License
 
 [Creative Commons (CC BY-SA 4.0) 2016 Ian Dennis Miller](https://github.com/iandennismiller/road-safety/blob/master/License.md)
+
+# References {-}
+
+```{r include=FALSE}
+knitr::write_bib(c('road-safety.bib'))
+```

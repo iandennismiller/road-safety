@@ -26,16 +26,21 @@
 <meta name="author" content="Ian Dennis Miller">
 
   
-<meta name="date" content="2016-10-15">
+<meta name="date" content="2016-10-16">
 
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="conclusion.html">
-<link rel="next" href="appendix.html">
+<link rel="prev" href="appendix.html">
+
 
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -68,21 +73,27 @@
 <li class="chapter" data-level="2" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>2</b> Methods</a><ul>
 <li class="chapter" data-level="2.1" data-path="methods.html"><a href="methods.html#data-collection"><i class="fa fa-check"></i><b>2.1</b> Data Collection</a></li>
 <li class="chapter" data-level="2.2" data-path="methods.html"><a href="methods.html#population-and-road-use"><i class="fa fa-check"></i><b>2.2</b> Population and Road Use</a></li>
-<li class="chapter" data-level="2.3" data-path="methods.html"><a href="methods.html#data-collection-challenges"><i class="fa fa-check"></i><b>2.3</b> Data Collection Challenges</a></li>
+<li class="chapter" data-level="2.3" data-path="methods.html"><a href="methods.html#challenges"><i class="fa fa-check"></i><b>2.3</b> Challenges</a></li>
 <li class="chapter" data-level="2.4" data-path="methods.html"><a href="methods.html#reproducibility"><i class="fa fa-check"></i><b>2.4</b> Reproducibility</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>3</b> Results</a><ul>
-<li class="chapter" data-level="3.1" data-path="results.html"><a href="results.html#trends"><i class="fa fa-check"></i><b>3.1</b> Trends</a></li>
-<li class="chapter" data-level="3.2" data-path="results.html"><a href="results.html#direct-comparison-nyc-and-toronto"><i class="fa fa-check"></i><b>3.2</b> Direct Comparison: NYC and Toronto</a></li>
-<li class="chapter" data-level="3.3" data-path="results.html"><a href="results.html#direct-comparison-amsterdam-and-toronto"><i class="fa fa-check"></i><b>3.3</b> Direct Comparison: Amsterdam and Toronto</a></li>
+<li class="chapter" data-level="3.1" data-path="results.html"><a href="results.html#historical-trends"><i class="fa fa-check"></i><b>3.1</b> Historical trends</a></li>
+<li class="chapter" data-level="3.2" data-path="results.html"><a href="results.html#future-trends"><i class="fa fa-check"></i><b>3.2</b> Future trends</a></li>
+<li class="chapter" data-level="3.3" data-path="results.html"><a href="results.html#individual-cities"><i class="fa fa-check"></i><b>3.3</b> Individual Cities</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="results.html"><a href="results.html#toronto-and-new-york-city"><i class="fa fa-check"></i><b>3.3.1</b> Toronto and New York City</a></li>
+<li class="chapter" data-level="3.3.2" data-path="results.html"><a href="results.html#toronto-and-amsterdam"><i class="fa fa-check"></i><b>3.3.2</b> Toronto and Amsterdam</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="discussion.html"><a href="discussion.html"><i class="fa fa-check"></i><b>4</b> Discussion</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="discussion.html"><a href="discussion.html"><i class="fa fa-check"></i><b>4</b> Discussion</a><ul>
+<li class="chapter" data-level="4.1" data-path="discussion.html"><a href="discussion.html#limitations"><i class="fa fa-check"></i><b>4.1</b> Limitations</a></li>
+<li class="chapter" data-level="4.2" data-path="discussion.html"><a href="discussion.html#future-directions"><i class="fa fa-check"></i><b>4.2</b> Future Directions</a></li>
+</ul></li>
 <li class="chapter" data-level="5" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>5</b> Conclusion</a></li>
-<li class="chapter" data-level="6" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>6</b> References</a></li>
-<li class="chapter" data-level="7" data-path="appendix.html"><a href="appendix.html"><i class="fa fa-check"></i><b>7</b> Appendix</a><ul>
-<li class="chapter" data-level="7.1" data-path="appendix.html"><a href="appendix.html#trend-lines"><i class="fa fa-check"></i><b>7.1</b> Trend lines</a></li>
-<li class="chapter" data-level="7.2" data-path="appendix.html"><a href="appendix.html#license"><i class="fa fa-check"></i><b>7.2</b> License</a></li>
+<li class="chapter" data-level="6" data-path="appendix.html"><a href="appendix.html"><i class="fa fa-check"></i><b>6</b> Appendix</a><ul>
+<li class="chapter" data-level="6.1" data-path="appendix.html"><a href="appendix.html#trend-lines"><i class="fa fa-check"></i><b>6.1</b> Trend lines</a></li>
+<li class="chapter" data-level="6.2" data-path="appendix.html"><a href="appendix.html#license"><i class="fa fa-check"></i><b>6.2</b> License</a></li>
 </ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 </ul>
 
       </nav>
@@ -100,16 +111,30 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="references" class="section level1">
-<h1><span class="header-section-number">6</span> References</h1>
+<div id="references" class="section level1 unnumbered">
+<h1>References</h1>
+
+<div id="refs" class="references">
+<div>
+<p>R Core Team. 2016. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/" class="uri">https://www.R-project.org/</a>.</p>
 </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="conclusion.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="appendix.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+<a href="appendix.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
 
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
@@ -139,7 +164,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["_main.pdf"],
+"download": ["pedestrian-cyclist-safety.pdf"],
 "toc": {
 "collapse": "subsection"
 }
@@ -147,6 +172,17 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
