@@ -52,7 +52,7 @@ trends_plot =
     guides(col=guide_legend(nrow=1, label.position = "bottom")) +
     theme(legend.key.width=unit(1, "cm")) +
     labs(
-      title="Pedestrian and Cyclist deaths per 100,000 residents, with future trend line",
+      title="Pedestrian and Cyclist deaths per 100,000 residents, with trend line",
       x="Year",
       y="# deaths per 100,000 residents"
     )

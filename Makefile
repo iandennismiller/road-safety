@@ -6,7 +6,7 @@ all: analysis
 
 analysis:
 	cd analysis && Rscript -e "library(bookdown); bookdown::render_book('toronto-road-safety.Rmd', 'bookdown::gitbook')"
-	convert -resize '600' docs/_main_files/figure-html/trends-1.png docs/trends-thumb.png
+	convert -resize '600' docs/pedestrian-cyclist-safety_files/figure-html/trends-1.png docs/trends-thumb.png
 
 pdf:
 	cd analysis && Rscript -e "library(bookdown); bookdown::render_book('toronto-road-safety.Rmd', 'bookdown::pdf_book')"
@@ -16,7 +16,7 @@ release: analysis pdf
 	@echo "ok"
 
 open:
-	open analysis/_book/introduction.html
+	open docs/index.html
 
 clean:
 	rm -f analysis/toronto-road-safety.md
