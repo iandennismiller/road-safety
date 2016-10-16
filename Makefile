@@ -11,10 +11,6 @@ analysis:
 pdf:
 	cd analysis && Rscript -e "library(bookdown); bookdown::render_book('toronto-road-safety.Rmd', 'bookdown::pdf_book')"
 
-release: analysis pdf
-	cp -r analysis/_book/* docs
-	@echo "ok"
-
 open:
 	open docs/index.html
 
