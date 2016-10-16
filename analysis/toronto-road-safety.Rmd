@@ -86,7 +86,7 @@ It is a common pattern for people to commute into cities during the workday even
 For these reasons, Metro area population is used as an indicator of road use.
 Yearly *per capita* fatality rates were calculated based on Metro Area populations, and are reported as rates per 100,000 residents throughout the results.
 
-## Data Collection Challenges
+## Challenges
 
 The task of data collection presented several challenges: 1) language translation; 2) local traffic safety data reporting policies; and 3) length of historical record.
 
@@ -181,18 +181,44 @@ However, during the observation period, Toronto rapidly pulls away from Amsterda
 
 <!-- # Discussion -->
 
+# Discussion
+
+This analysis suggests that in 2009 Toronto was among the safer cities in the study.
+However, in 2015 Toronto had the highest rate of pedestrian and cyclist fatalities in the study, and is trending to become the most dangerous of these cities within the next four years.
+This paints a rather grim picture for the future of Toronto, because the trend is relatively steep in relation to the others and it is trending in the direction of greater danger.
+Toronto is somehow different from all the other cities in terms of this particular trend.
+
+## Limitations
+
+The greatest limitation of this study is the underlying data, which could include more of the historical record for more cities.
+Although some cities provide archives stretching back to the 1990s, other cities seem to have no official record of pedestrian and cyclist fatalities whatsoever, at least not that the authors could find.
+Another major limitation to this study is the inability to explain *why* these changes have occurred.
+It is likely that public policy, road design, safety initiatives, and a variety of other factors influence safety differently in each of these cities, and without a more robust investigation into these factors, it is not possible to comment upon the causal forces that perturb the safety rates up and down.
+Alas, time is limited as well, and if there were more of it, the surely we could *solve it all*, if only ...
+
+## Future Directions
+
+This work is open source; the data and the code are available for anybody to view and edit.
+Some immediate future directions are provided in the [Todo.md](https://github.com/iandennismiller/road-safety/blob/master/Todo.md) file, which is in the root directory of the project.
+
+Among these next steps is to control for factors that impact traffic: 1) kilometers of roadway; 2) kilometers of bike lanes; 3) number of crosswalks or intersections; 4) kilometers of sidewalk; 5) average speed limit; and 6) number of automobile trips per day.
+It will also be interesting to analyze the historical record in terms of safety policy interventions, such as "Vision Zero" initiatives.
+Risk ratios are a common tool used to communicate hazards in terms that are easy to comprehend, so these ought to be included in the final publication.
+
+Another direction for future expansion is to include other cities.
+Of particular interest to Toronto will be other Canadian cities including Montreal and Vancouver.
+Lastly, although this report focused on the city of Toronto throughout its analysis and discussion, these data tell the story of every other city too.
+What are New York City and London doing to lower their pedestrian and cyclist fatality rates?
+Will the data-driven approach taken by Los Angeles to reform its most dangerous intersections improve safety?
+
+As civic "open data" initiatives continue to spread internationally, these data will become available with greater frequency.
+Inevitably, a worldwide transit safety assessment shall emerge.
+Already, we are able to catch a glimpse of this future, and there do seem to be patterns among the cities that have achieved greater safety and those that haven't.
+Therefore, the ultimate future direction for this work is to inform policy that helps people move quickly and safely.
+
 # Conclusion
 
-This analysis suggests that in 2009 Toronto was one of the safer cities in the study.
-However, by 2015 Toronto had risen to the highest number of pedestrian and cyclist fatalities per capita among the 7 cities studied, and is trending to become significantly more dangerous than all other cities studied.
-
-Although this report was originally motivated by conditions in the city of Toronto, the results can be used to tell a story about each city.
-
-It is worth considering what London is doing, because it is trending to become safer than every North American city in the study.  Although this study cannot answer this question, it is worth considering whether any policies enacted by London might be responsible for the drop in fatality rates.  For example, London has adopted ...
-
-- There are risks inherint in following trends
-- Likewise, there are risks in ignoring them
-- Toronto is on track to become more dangerous
+If we calibrate our safety expectations based upon other cities, then this study presents evidence that Toronto compares unfavourably to the comparison cities that were studied.  Something about road safety is different in Toronto.  Although it is not possible to conclude *why* Toronto looks so different, there is at least a good reason to begin this investigation in earnest.  Therefore, there may well be reason to conclude that the pedestrian and cyclist fatality rate is actually high in the City of Toronto.
 
 <!-- # References -->
 
