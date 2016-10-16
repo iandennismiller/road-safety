@@ -49,7 +49,7 @@ To perform this comparison, yearly pedestrian and cyclist fatality data were col
 The historical results were plotted and trend lines were fitted to the data, permitting a projection into the near future.
 The results of this report suggest that Toronto has become more dangerous to pedestrians and cyclists during the previous seven years.
 During the same time period, several other cities in the study exhibited safety improvements.
-If these trends continue for another 3 years, Toronto will become significantly more dangerous than every other city in the study.
+If these trends continue for another 3 years, Toronto will become significantly more dangerous to pedestrians and cyclists than every other city in the study.
 
 # Methods
 
@@ -69,7 +69,7 @@ The three European cities were chosen for other reasons.
 London was selected for its political relationship to Canada, but otherwise this choice was largely convenient.
 Finally, Amsterdam and Copenhagen were selected for their good transit safety reputations, which would permit a baseline comparison.
 
-## Data Fields
+## Data Collection
 
 The following data fields were collected for each year and city in this study:
 
@@ -83,7 +83,9 @@ In addition to raw fields, citation data were collected for each observation.  T
 
 ## Population and Road Use
 
-We collected both city population and metro area population for consideration. Estimates provided by Wikipedia were held constant across all years for each city. City populations ranged from 0.6 million to 8.7 million (14.5:1), whereas metro area populations ranged from 2.0 million to 23.7 million (11.85:1).  Between these population measures, the metro area population results in a less extreme ratio among cities.  It is a common pattern for people to commute to cities during the workday even though they do not live in the city.  For these reasons, Metro area population is used as an indicator of road use.  Larger metro areas will generate more trips, so it will be a better proxy for actual traffic and, therefore, opportunities for automobile, pedestrian, and cyclist interactions.  Yearly *per capita* fatality rates were calculated based on Metro Area populations, and are reported as rates per 100,000 residents throughout the results.
+Both city population and metro area population were collected for consideration. Population estimates provided by Wikipedia were held constant across all years for each city. City populations ranged from 0.6 million to 8.7 million (14.5:1), whereas metro area populations ranged from 2.0 million to 23.7 million (11.85:1).  Between these population measures, the metro area population results in a less extreme ratio between cities.
+
+It is a common pattern for people to commute into cities during the workday even though they do not live in the city.  Larger metro areas will generate more trips, so a population measure that includes outlying areas will be a better proxy for actual traffic and, therefore, opportunities for automobile, pedestrian, and cyclist interactions.  For these reasons, Metro area population is used as an indicator of road use.  Yearly *per capita* fatality rates were calculated based on Metro Area populations, and are reported as rates per 100,000 residents throughout the results.
 
 ## Data Collection Challenges
 
