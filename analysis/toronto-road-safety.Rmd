@@ -7,6 +7,7 @@ documentclass: article
 output:
   bookdown::pdf_book:
     toc: no
+#    keep_tex: yes
 ---
 
 ```{r setup, include=FALSE}
@@ -115,22 +116,20 @@ The rate of pedestrian and cyclist fatalities per 100,000 residents are plotted 
 per_capita_metro_plot
 ```
 
-## Near Future trends
+## Future trends
 
 A more sophisticated regression model was built with the **nlme** library in order to obtain a more accurate line estimate that properly accounts for both within- and between-city variance.
 
 \begin{align*}
-  fixed &= \textit{fatalities_per_capita} \sim 1 + \textit{year_offset} \\
-  random &=~ \sim 1 + \textit{year_offset}~|~\textit{city}
+    fixed &= \text{fatalities} \sim 1 + \text{year} \\
+    random &=~ \sim 1 + \text{year} ~ | ~ \text{city}
 \end{align*}
 
-The trend lines were then extended into the future in order to predict pedestrian and cyclist fatality rates.  These results are plotted in Figure \@ref(fig:trends).
+The trend lines were then extended into the future in order to predict pedestrian and cyclist fatality rates.  These results are plotted in Figure \@ref(fig:trends).  If these trends hold for the next four years, then Toronto is on track to become more dangerous to pedestrians and cyclists than every other city in the study.  By 2015, Toronto has already become indistinguishable from London, and by 2019, Toronto exceeds New York City's rate as well.
 
-```{r trends, fig.height=4, fig.align="center", fig.cap="A "}
+```{r trends, fig.height=4, fig.align="center", fig.cap="Historical pedestrian and cyclist fatality rate trends are extrapolated into the near future."}
 trends_plot
 ```
-
-Estimations in the more distant future will be less reliable than those in the near future.  If these trends hold, then Toronto is on track to become more dangerous to pedestrians and cyclists than each other city.  By 2015, Toronto has already become indistinguishable from London, 
 
 ## Featured Comparisons
 
