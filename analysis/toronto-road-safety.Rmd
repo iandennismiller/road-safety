@@ -20,10 +20,12 @@ source("analysis.R")
 source("plots.R")
 ```
 
+`r if (knitr:::is_html_output()) '<a href="pedestrian-cyclist-safety.pdf">Available as PDF</a>'`
+
 # Introduction
 
 <div align="center" style="font-size: 20pt">
-<p>Working Paper. This is not the final report.</p>
+<p>Working Paper.</p>
 </div>
 
 During the Summer of 2016 in Toronto, more than 1,000 pedestrians and cyclists were struck by automobiles [@Spurr:2016aa].
@@ -224,8 +226,6 @@ Something about road safety is different in Toronto.
 Although it is not possible to conclude *why* Toronto looks so different, there is at least a good reason to begin this investigation in earnest.
 In conclusion, there is now evidence that the pedestrian and cyclist fatality rate is actually high in the City of Toronto.
 
-`r if (knitr:::is_html_output()) '<div align="center"><img src="https://iandennismiller.github.io/road-safety/pedestrian-cyclist-safety_files/figure-html/trends-1.png" /></div>'`
-
 # Appendix
 
 ## Trend lines
@@ -246,7 +246,7 @@ knitr::kable(
 
 [Creative Commons (CC BY-SA 4.0) 2016 Ian Dennis Miller](https://github.com/iandennismiller/road-safety/blob/master/License.md)
 
-# References {-}
+`r if (!knitr:::is_html_output()) '# References {-}'`
 
 ```{r include=FALSE}
 knitr::write_bib(c('road-safety.bib'))
